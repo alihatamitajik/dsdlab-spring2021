@@ -1,0 +1,212 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x9028903290289032",
+      "device": "xc7vx485tffg1157-1",
+      "name": "binary_4_bit_adder",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "FullAdder_0": "",
+      "FullAdder_1": "",
+      "FullAdder_2": "",
+      "FullAdder_3": ""
+    },
+    "ports": {
+      "C_out": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "S0": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "S1": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "S2": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "S3": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "A3": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "B3": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "A2": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "B2": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "A1": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "B1": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "A0": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "B0": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "C_in": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      }
+    },
+    "components": {
+      "FullAdder_0": {
+        "vlnv": "Group5:user:FullAdder:1.0",
+        "xci_name": "binary_4_bit_adder_FullAdder_0_0"
+      },
+      "FullAdder_1": {
+        "vlnv": "Group5:user:FullAdder:1.0",
+        "xci_name": "binary_4_bit_adder_FullAdder_0_1"
+      },
+      "FullAdder_2": {
+        "vlnv": "Group5:user:FullAdder:1.0",
+        "xci_name": "binary_4_bit_adder_FullAdder_0_2"
+      },
+      "FullAdder_3": {
+        "vlnv": "Group5:user:FullAdder:1.0",
+        "xci_name": "binary_4_bit_adder_FullAdder_0_3"
+      }
+    },
+    "nets": {
+      "FullAdder_0_C_out": {
+        "ports": [
+          "FullAdder_0/C_out",
+          "FullAdder_1/C_in"
+        ]
+      },
+      "FullAdder_1_C_out": {
+        "ports": [
+          "FullAdder_1/C_out",
+          "FullAdder_2/C_in"
+        ]
+      },
+      "FullAdder_2_C_out": {
+        "ports": [
+          "FullAdder_2/C_out",
+          "FullAdder_3/C_in"
+        ]
+      },
+      "FullAdder_3_C_out": {
+        "ports": [
+          "FullAdder_3/C_out",
+          "C_out"
+        ]
+      },
+      "FullAdder_0_S": {
+        "ports": [
+          "FullAdder_0/S",
+          "S0"
+        ]
+      },
+      "FullAdder_1_S": {
+        "ports": [
+          "FullAdder_1/S",
+          "S1"
+        ]
+      },
+      "FullAdder_2_S": {
+        "ports": [
+          "FullAdder_2/S",
+          "S2"
+        ]
+      },
+      "FullAdder_3_S": {
+        "ports": [
+          "FullAdder_3/S",
+          "S3"
+        ]
+      },
+      "A3_1": {
+        "ports": [
+          "A3",
+          "FullAdder_3/A"
+        ]
+      },
+      "B3_1": {
+        "ports": [
+          "B3",
+          "FullAdder_3/B"
+        ]
+      },
+      "A2_1": {
+        "ports": [
+          "A2",
+          "FullAdder_2/A"
+        ]
+      },
+      "B2_1": {
+        "ports": [
+          "B2",
+          "FullAdder_2/B"
+        ]
+      },
+      "A1_1": {
+        "ports": [
+          "A1",
+          "FullAdder_1/A"
+        ]
+      },
+      "B1_1": {
+        "ports": [
+          "B1",
+          "FullAdder_1/B"
+        ]
+      },
+      "A0_1": {
+        "ports": [
+          "A0",
+          "FullAdder_0/A"
+        ]
+      },
+      "B0_1": {
+        "ports": [
+          "B0",
+          "FullAdder_0/B"
+        ]
+      },
+      "C_in_1": {
+        "ports": [
+          "C_in",
+          "FullAdder_0/C_in"
+        ]
+      }
+    }
+  }
+}
