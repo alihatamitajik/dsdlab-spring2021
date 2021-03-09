@@ -1,0 +1,212 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x9028903290289032",
+      "device": "xc7vx485tffg1157-1",
+      "name": "binadd4b",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "FA_0": "",
+      "FA_1": "",
+      "FA_2": "",
+      "FA_3": ""
+    },
+    "ports": {
+      "A0": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "B0": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "C_in": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "S0": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "S1": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "S2": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "S3": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "C_out": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "A1": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "B1": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "A2": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "B2": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "A3": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "B3": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      }
+    },
+    "components": {
+      "FA_0": {
+        "vlnv": "Group5:user:FA:1.0",
+        "xci_name": "binadd4b_FA_0_0"
+      },
+      "FA_1": {
+        "vlnv": "Group5:user:FA:1.0",
+        "xci_name": "binadd4b_FA_0_1"
+      },
+      "FA_2": {
+        "vlnv": "Group5:user:FA:1.0",
+        "xci_name": "binadd4b_FA_0_2"
+      },
+      "FA_3": {
+        "vlnv": "Group5:user:FA:1.0",
+        "xci_name": "binadd4b_FA_0_3"
+      }
+    },
+    "nets": {
+      "A0_1": {
+        "ports": [
+          "A0",
+          "FA_0/A"
+        ]
+      },
+      "B0_1": {
+        "ports": [
+          "B0",
+          "FA_0/B"
+        ]
+      },
+      "C_in_1": {
+        "ports": [
+          "C_in",
+          "FA_0/C_in"
+        ]
+      },
+      "FA_0_C_out": {
+        "ports": [
+          "FA_0/C_out",
+          "FA_1/C_in"
+        ]
+      },
+      "FA_1_C_out": {
+        "ports": [
+          "FA_1/C_out",
+          "FA_2/C_in"
+        ]
+      },
+      "FA_2_C_out": {
+        "ports": [
+          "FA_2/C_out",
+          "FA_3/C_in"
+        ]
+      },
+      "FA_0_S": {
+        "ports": [
+          "FA_0/S",
+          "S0"
+        ]
+      },
+      "FA_1_S": {
+        "ports": [
+          "FA_1/S",
+          "S1"
+        ]
+      },
+      "FA_2_S": {
+        "ports": [
+          "FA_2/S",
+          "S2"
+        ]
+      },
+      "FA_3_S": {
+        "ports": [
+          "FA_3/S",
+          "S3"
+        ]
+      },
+      "FA_3_C_out": {
+        "ports": [
+          "FA_3/C_out",
+          "C_out"
+        ]
+      },
+      "A1_1": {
+        "ports": [
+          "A1",
+          "FA_1/A"
+        ]
+      },
+      "B1_1": {
+        "ports": [
+          "B1",
+          "FA_1/B"
+        ]
+      },
+      "A2_1": {
+        "ports": [
+          "A2",
+          "FA_2/A"
+        ]
+      },
+      "B2_1": {
+        "ports": [
+          "B2",
+          "FA_2/B"
+        ]
+      },
+      "A3_1": {
+        "ports": [
+          "A3",
+          "FA_3/A"
+        ]
+      },
+      "B3_1": {
+        "ports": [
+          "B3",
+          "FA_3/B"
+        ]
+      }
+    }
+  }
+}

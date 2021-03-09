@@ -1,9 +1,0 @@
-{
-	"version": "1.0",
-	"modules": {
-		"binary_4_bit_adder": {
-			"proto_instances": {
-			}
-		}
-	}
-}

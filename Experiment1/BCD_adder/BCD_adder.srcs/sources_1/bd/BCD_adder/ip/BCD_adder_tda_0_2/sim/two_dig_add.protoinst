@@ -1,9 +1,0 @@
-{
-	"version": "1.0",
-	"modules": {
-		"two_dig_add": {
-			"proto_instances": {
-			}
-		}
-	}
-}
