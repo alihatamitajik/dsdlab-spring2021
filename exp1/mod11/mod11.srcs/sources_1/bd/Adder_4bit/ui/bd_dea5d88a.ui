@@ -1,0 +1,52 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace portBus C_in -pg 1 -lvl 0 -x -390 -y -420 -defaultsOSRD
+preplace portBus a1 -pg 1 -lvl 0 -x -390 -y -450 -defaultsOSRD
+preplace portBus a2 -pg 1 -lvl 0 -x -390 -y -240 -defaultsOSRD
+preplace portBus a3 -pg 1 -lvl 0 -x -390 -y -150 -defaultsOSRD
+preplace portBus a4 -pg 1 -lvl 0 -x -390 -y 130 -defaultsOSRD
+preplace portBus b4 -pg 1 -lvl 0 -x -390 -y 70 -defaultsOSRD
+preplace portBus b3 -pg 1 -lvl 0 -x -390 -y -70 -defaultsOSRD
+preplace portBus b2 -pg 1 -lvl 0 -x -390 -y -210 -defaultsOSRD
+preplace portBus b1 -pg 1 -lvl 0 -x -390 -y -340 -defaultsOSRD
+preplace portBus s1 -pg 1 -lvl 3 -x 540 -y -450 -defaultsOSRD
+preplace portBus s2 -pg 1 -lvl 3 -x 540 -y -210 -defaultsOSRD
+preplace portBus s3 -pg 1 -lvl 3 -x 540 -y -480 -defaultsOSRD
+preplace portBus s4 -pg 1 -lvl 3 -x 540 -y -510 -defaultsOSRD
+preplace portBus C_out -pg 1 -lvl 3 -x 540 -y -540 -defaultsOSRD
+preplace inst FullAdder_0 -pg 1 -lvl 2 -x 360 -y -360 -defaultsOSRD
+preplace inst FullAdder_1 -pg 1 -lvl 2 -x 360 -y -220 -defaultsOSRD
+preplace inst FullAdder_2 -pg 1 -lvl 2 -x 360 -y 60 -defaultsOSRD
+preplace inst FullAdder_3 -pg 1 -lvl 2 -x 360 -y -80 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 1 -x -190 -y -350 -defaultsOSRD
+preplace inst util_vector_logic_1 -pg 1 -lvl 1 -x -190 -y -220 -defaultsOSRD
+preplace inst util_vector_logic_2 -pg 1 -lvl 1 -x -190 -y -80 -defaultsOSRD
+preplace inst util_vector_logic_3 -pg 1 -lvl 1 -x -190 -y 60 -defaultsOSRD
+preplace netloc C_in_1 1 0 2 -370 -420 -30
+preplace netloc util_vector_logic_0_Res 1 1 1 -50 -350n
+preplace netloc a1_1 1 0 2 NJ -450 -20
+preplace netloc util_vector_logic_1_Res 1 1 1 N -220
+preplace netloc FullAdder_0_C_out 1 1 2 0 -440 460
+preplace netloc FullAdder_1_C_out 1 1 2 -10 -450 470
+preplace netloc FullAdder_3_C_out 1 1 2 0 140 460
+preplace netloc util_vector_logic_2_Res 1 1 1 N -80
+preplace netloc util_vector_logic_3_Res 1 1 1 N 60
+preplace netloc a2_1 1 0 2 -360J -430 -40
+preplace netloc a3_1 1 0 2 NJ -150 -40
+preplace netloc a4_1 1 0 2 NJ 130 -30
+preplace netloc b4_1 1 0 1 N 70
+preplace netloc b3_1 1 0 1 N -70
+preplace netloc b2_1 1 0 1 N -210
+preplace netloc b1_1 1 0 1 N -340
+preplace netloc FullAdder_0_Sum 1 2 1 500 -450n
+preplace netloc FullAdder_1_Sum 1 2 1 N -210
+preplace netloc FullAdder_3_Sum 1 2 1 490 -480n
+preplace netloc FullAdder_2_Sum 1 2 1 510 -510n
+preplace netloc FullAdder_2_C_out 1 2 1 480 -540n
+levelinfo -pg 1 -390 -190 360 540
+pagesize -pg 1 -db -bbox -sgen -500 -560 660 180
+"
+}
+0
