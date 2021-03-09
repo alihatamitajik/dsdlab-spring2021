@@ -1,0 +1,116 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x2D40E3F52D40E3F5",
+      "device": "xc7vx485tffg1157-1",
+      "name": "FullAdder",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "util_vector_logic_0": "",
+      "HalfAdder_0": "",
+      "HalfAdder_1": ""
+    },
+    "ports": {
+      "A": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "B": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "C_in": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "S": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "C_out": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      }
+    },
+    "components": {
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "FullAdder_util_vector_logic_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "HalfAdder_0": {
+        "vlnv": "Group5:user:HalfAdder:1.0",
+        "xci_name": "FullAdder_HalfAdder_0_2"
+      },
+      "HalfAdder_1": {
+        "vlnv": "Group5:user:HalfAdder:1.0",
+        "xci_name": "FullAdder_HalfAdder_0_3"
+      }
+    },
+    "nets": {
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "C_out"
+        ]
+      },
+      "HalfAdder_0_C_out": {
+        "ports": [
+          "HalfAdder_0/C_out",
+          "util_vector_logic_0/Op1"
+        ]
+      },
+      "A_1": {
+        "ports": [
+          "A",
+          "HalfAdder_0/A"
+        ]
+      },
+      "B_1": {
+        "ports": [
+          "B",
+          "HalfAdder_0/B"
+        ]
+      },
+      "C_in_1": {
+        "ports": [
+          "C_in",
+          "HalfAdder_1/B"
+        ]
+      },
+      "HalfAdder_0_S": {
+        "ports": [
+          "HalfAdder_0/S",
+          "HalfAdder_1/A"
+        ]
+      },
+      "HalfAdder_1_C_out": {
+        "ports": [
+          "HalfAdder_1/C_out",
+          "util_vector_logic_0/Op2"
+        ]
+      },
+      "HalfAdder_1_S": {
+        "ports": [
+          "HalfAdder_1/S",
+          "S"
+        ]
+      }
+    }
+  }
+}

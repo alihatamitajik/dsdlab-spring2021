@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"BCD_1_digit_adder": {
+			"proto_instances": {
+			}
+		}
+	}
+}

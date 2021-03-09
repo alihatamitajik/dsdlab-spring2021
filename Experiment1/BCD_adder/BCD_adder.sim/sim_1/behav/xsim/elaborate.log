@@ -1,0 +1,8 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: U:/Soroush/ProgramFiles/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto da4dce01527a45dba4e977e2c3769579 --incr --debug typical --relax --mt 2 -L xlconstant_v1_1_6 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot BCD_adder_tb_behav xil_defaultlib.BCD_adder_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-2063] Module <BCD_adder_tda_0_0> not found while processing module instance <tda_0> [U:/DSDLab/Experiment1/BCD_adder/BCD_adder.srcs/sources_1/bd/BCD_adder/sim/BCD_adder.v:117]
+ERROR: [VRFC 10-2063] Module <BCD_adder_tda_0_1> not found while processing module instance <tda_1> [U:/DSDLab/Experiment1/BCD_adder/BCD_adder.srcs/sources_1/bd/BCD_adder/sim/BCD_adder.v:135]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
