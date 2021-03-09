@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"mod11": {
+			"proto_instances": {
+			}
+		}
+	}
+}

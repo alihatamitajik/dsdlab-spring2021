@@ -1,0 +1,33 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ipshared/e383/sim/Adder_4bit.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_0/sim/bcdAdder_Adder_4bit_0_0.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/src/Adder_4bit_FullAdder_0_0/src/FullAdder_util_vector_logic_0_0/sim/FullAdder_util_vector_logic_0_0.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/src/Adder_4bit_FullAdder_0_0/src/FullAdder_util_vector_logic_0_1/sim/FullAdder_util_vector_logic_0_1.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/src/Adder_4bit_FullAdder_0_0/src/FullAdder_util_vector_logic_0_2/sim/FullAdder_util_vector_logic_0_2.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/src/Adder_4bit_FullAdder_0_0/src/FullAdder_util_vector_logic_0_3/sim/FullAdder_util_vector_logic_0_3.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/src/Adder_4bit_FullAdder_0_0/src/FullAdder_util_vector_logic_0_4/sim/FullAdder_util_vector_logic_0_4.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/ipshared/fdfd/sim/FullAdder.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/src/Adder_4bit_FullAdder_0_0/sim/Adder_4bit_FullAdder_0_0.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/src/Adder_4bit_FullAdder_0_1/sim/Adder_4bit_FullAdder_0_1.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/src/Adder_4bit_FullAdder_0_2/sim/Adder_4bit_FullAdder_0_2.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/src/Adder_4bit_FullAdder_0_3/sim/Adder_4bit_FullAdder_0_3.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/src/Adder_4bit_util_vector_logic_0_0/sim/Adder_4bit_util_vector_logic_0_0.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/src/Adder_4bit_util_vector_logic_0_1/sim/Adder_4bit_util_vector_logic_0_1.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/src/Adder_4bit_util_vector_logic_0_2/sim/Adder_4bit_util_vector_logic_0_2.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/src/Adder_4bit_util_vector_logic_0_3/sim/Adder_4bit_util_vector_logic_0_3.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_Adder_4bit_0_1/sim/bcdAdder_Adder_4bit_0_1.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_util_vector_logic_0_0/sim/bcdAdder_util_vector_logic_0_0.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_util_vector_logic_0_1/sim/bcdAdder_util_vector_logic_0_1.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_util_vector_logic_1_0/sim/bcdAdder_util_vector_logic_1_0.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_util_vector_logic_2_0/sim/bcdAdder_util_vector_logic_2_0.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/ip/bcdAdder_xlconstant_0_0/sim/bcdAdder_xlconstant_0_0.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/sim/bcdAdder.v" \
+"../../../../mod11.srcs/sources_1/bd/bcdAdder/hdl/bcdAdder_wrapper.v" \
+"../../../../mod11.srcs/sim_1/new/bcdtest.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Mar  9 19:41:08 2021" VIVADOVERSION="2019.1">
+
+  <SYSTEMINFO ARCH="kintex7" BOARD="xilinx.com:kc705:part0:1.6" DEVICE="7k325t" NAME="bcdAdder" PACKAGE="ffg900" SPEEDGRADE="-2"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" LEFT="0" NAME="a1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_a1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_0" PORT="a1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="a2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_a2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_0" PORT="a2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="a3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_a3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_0" PORT="a3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="a4" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_a4">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_0" PORT="a4"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="b1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_b1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_0" PORT="b1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="b2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_b2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_0" PORT="b2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="b3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_b3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_0" PORT="b3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="b4" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_b4">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_0" PORT="b4"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="C_in" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_C_in">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_0" PORT="C_in"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="C_out" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_1_C_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_1" PORT="C_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="s1" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_1_s1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_1" PORT="s1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="s2" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_1_s2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_1" PORT="s2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="s3" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_1_s3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_1" PORT="s3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="s4" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_1_s4">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_1" PORT="s4"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="2" FULLNAME="/Adder_4bit_0" HWVERSION="1.0" INSTANCE="Adder_4bit_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Adder_4bit" VLNV="xilinx.com:user:Adder_4bit:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="bcdAdder_Adder_4bit_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="C_in" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_C_in">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="C_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="C_out" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_C_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_3" PORT="Op1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="a1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_a1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="a1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="a2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_a2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="a2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="a3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_a3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="a3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="a4" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_a4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="a4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="b1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_b1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="b1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="b2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_b2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="b2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="b3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_b3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="b3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="b4" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_b4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="b4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="s1" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_s1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_1" PORT="a1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="s2" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_s2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_1" PORT="a2"/>
+            <CONNECTION INSTANCE="util_vector_logic_1" PORT="Op2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="s3" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_s3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_1" PORT="a3"/>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="s4" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_s4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_1" PORT="a4"/>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op1"/>
+            <CONNECTION INSTANCE="util_vector_logic_1" PORT="Op1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/Adder_4bit_1" HWVERSION="1.0" INSTANCE="Adder_4bit_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Adder_4bit" VLNV="xilinx.com:user:Adder_4bit:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="bcdAdder_Adder_4bit_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="C_in" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="C_out" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_1_C_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="C_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="a1" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_s1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_0" PORT="s1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="a2" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_s2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_0" PORT="s2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="a3" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_s3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_0" PORT="s3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="a4" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_s4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_0" PORT="s4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="b1" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="b2" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_3_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_3" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="b3" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_3_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_3" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="b4" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="s1" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_1_s1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="s2" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_1_s2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="s3" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_1_s3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="s4" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_1_s4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s4"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/util_vector_logic_0" HWVERSION="2.0" INSTANCE="util_vector_logic_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="and"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="bcdAdder_util_vector_logic_0_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_andgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_s4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_0" PORT="s4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_s3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_0" PORT="s3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_2" PORT="Op1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/util_vector_logic_1" HWVERSION="2.0" INSTANCE="util_vector_logic_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="and"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="bcdAdder_util_vector_logic_0_1"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_andgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_s4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_0" PORT="s4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_s2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_0" PORT="s2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_1_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_2" PORT="Op2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/util_vector_logic_2" HWVERSION="2.0" INSTANCE="util_vector_logic_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="or"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="bcdAdder_util_vector_logic_1_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_orgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_1_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_1" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_2_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_3" PORT="Op2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/util_vector_logic_3" HWVERSION="2.0" INSTANCE="util_vector_logic_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="or"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="bcdAdder_util_vector_logic_2_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_orgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_C_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_0" PORT="C_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_2_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_2" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_3_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_1" PORT="b2"/>
+            <CONNECTION INSTANCE="Adder_4bit_1" PORT="b3"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="6" FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x0"/>
+        <PARAMETER NAME="Component_Name" VALUE="bcdAdder_xlconstant_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_1" PORT="b4"/>
+            <CONNECTION INSTANCE="Adder_4bit_1" PORT="b1"/>
+            <CONNECTION INSTANCE="Adder_4bit_1" PORT="C_in"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>
