@@ -57,7 +57,7 @@ module testbench;
             for (j = 0; j < 10; j = j + 1)
                 for (k = 0; k < 10; k = k + 1)
                     for (l = 0; l < 10; l = l + 1) begin
-                        #5 
+                        #10 
                         dig1 = l;
                         dig2 = k;
                         dig3 = j;
@@ -66,6 +66,6 @@ module testbench;
                  
              
 
-        #5 $finish;
+        #10 $finish;
     end
 endmodule

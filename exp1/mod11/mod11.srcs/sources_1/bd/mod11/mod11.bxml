@@ -2,21 +2,37 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="mod11" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1615312666"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1615312666"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1615312668"/>
-    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1615312668"/>
+    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1615348390"/>
+    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1615348390"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1615348409"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1615348409"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
-      <File Name="ip\mod11_BCDAdder_0_0\mod11_BCDAdder_0_0.xci" Type="IP">
-        <Instance HierarchyPath="BCDAdder_0"/>
+      <File Name="ip\mod11_bcdAdder_0_0\mod11_bcdAdder_0_0.xci" Type="IP">
+        <Instance HierarchyPath="bcdAdder_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\mod11_BCDAdder_0_1\mod11_BCDAdder_0_1.xci" Type="IP">
-        <Instance HierarchyPath="BCDAdder_1"/>
+      <File Name="ip\mod11_bcdAdder_0_1\mod11_bcdAdder_0_1.xci" Type="IP">
+        <Instance HierarchyPath="bcdAdder_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\mod11_Adder_4bit_0_0\mod11_Adder_4bit_0_0.xci" Type="IP">
+        <Instance HierarchyPath="Adder_4bit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\mod11_Adder_4bit_0_1\mod11_Adder_4bit_0_1.xci" Type="IP">
+        <Instance HierarchyPath="Adder_4bit_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -47,7 +63,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\mod11_util_vector_logic_0_2\mod11_util_vector_logic_0_2.xci" Type="IP">
+      <File Name="ip\mod11_util_vector_logic_1_0\mod11_util_vector_logic_1_0.xci" Type="IP">
         <Instance HierarchyPath="util_vector_logic_2"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -55,7 +71,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\mod11_util_vector_logic_0_3\mod11_util_vector_logic_0_3.xci" Type="IP">
+      <File Name="ip\mod11_util_vector_logic_2_0\mod11_util_vector_logic_2_0.xci" Type="IP">
         <Instance HierarchyPath="util_vector_logic_3"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -63,7 +79,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\mod11_util_vector_logic_0_4\mod11_util_vector_logic_0_4.xci" Type="IP">
+      <File Name="ip\mod11_util_vector_logic_1_1\mod11_util_vector_logic_1_1.xci" Type="IP">
         <Instance HierarchyPath="util_vector_logic_4"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -71,7 +87,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\mod11_util_vector_logic_5_0\mod11_util_vector_logic_5_0.xci" Type="IP">
+      <File Name="ip\mod11_util_vector_logic_4_0\mod11_util_vector_logic_4_0.xci" Type="IP">
         <Instance HierarchyPath="util_vector_logic_5"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -79,7 +95,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\mod11_util_vector_logic_5_1\mod11_util_vector_logic_5_1.xci" Type="IP">
+      <File Name="ip\mod11_util_vector_logic_5_0\mod11_util_vector_logic_5_0.xci" Type="IP">
         <Instance HierarchyPath="util_vector_logic_6"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -87,24 +103,8 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\mod11_util_vector_logic_5_2\mod11_util_vector_logic_5_2.xci" Type="IP">
+      <File Name="ip\mod11_util_vector_logic_6_0\mod11_util_vector_logic_6_0.xci" Type="IP">
         <Instance HierarchyPath="util_vector_logic_7"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\mod11_util_vector_logic_7_0\mod11_util_vector_logic_7_0.xci" Type="IP">
-        <Instance HierarchyPath="util_vector_logic_8"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\mod11_util_vector_logic_8_0\mod11_util_vector_logic_8_0.xci" Type="IP">
-        <Instance HierarchyPath="util_vector_logic_9"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

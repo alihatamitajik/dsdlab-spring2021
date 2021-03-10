@@ -47,14 +47,14 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:user:BCDAdder:1.0
+// IP VLNV: xilinx.com:user:bcdAdder:1.0
 // IP Revision: 2
 
 `timescale 1ns/1ps
 
 (* IP_DEFINITION_SOURCE = "IPI" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module mod11_BCDAdder_0_0 (
+module mod11_bcdAdder_0_0 (
   C_in,
   C_out,
   a1,

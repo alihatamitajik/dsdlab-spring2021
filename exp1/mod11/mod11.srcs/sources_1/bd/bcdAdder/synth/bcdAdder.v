@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-//Date        : Tue Mar  9 19:40:57 2021
+//Date        : Wed Mar 10 07:15:09 2021
 //Host        : Hatam-Desktop running 64-bit major release  (build 9200)
 //Command     : generate_target bcdAdder.bd
 //Design      : bcdAdder
@@ -45,7 +45,6 @@ module bcdAdder
   wire [0:0]Adder_4bit_0_s2;
   wire [0:0]Adder_4bit_0_s3;
   wire [0:0]Adder_4bit_0_s4;
-  wire [0:0]Adder_4bit_1_C_out;
   wire [0:0]Adder_4bit_1_s1;
   wire [0:0]Adder_4bit_1_s2;
   wire [0:0]Adder_4bit_1_s3;
@@ -66,7 +65,7 @@ module bcdAdder
   wire [0:0]xlconstant_0_dout;
 
   assign C_in_1 = C_in[0];
-  assign C_out[0] = Adder_4bit_1_C_out;
+  assign C_out[0] = util_vector_logic_3_Res;
   assign a1_1 = a1[0];
   assign a2_1 = a2[0];
   assign a3_1 = a3[0];
@@ -96,7 +95,6 @@ module bcdAdder
         .s4(Adder_4bit_0_s4));
   bcdAdder_Adder_4bit_0_1 Adder_4bit_1
        (.C_in(xlconstant_0_dout),
-        .C_out(Adder_4bit_1_C_out),
         .a1(Adder_4bit_0_s1),
         .a2(Adder_4bit_0_s2),
         .a3(Adder_4bit_0_s3),

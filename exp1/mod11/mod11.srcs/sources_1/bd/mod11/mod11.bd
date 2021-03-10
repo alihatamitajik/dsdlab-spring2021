@@ -9,8 +9,10 @@
       "validated": "true"
     },
     "design_tree": {
-      "BCDAdder_0": "",
-      "BCDAdder_1": "",
+      "bcdAdder_0": "",
+      "bcdAdder_1": "",
+      "Adder_4bit_0": "",
+      "Adder_4bit_1": "",
       "xlconstant_0": "",
       "util_vector_logic_0": "",
       "util_vector_logic_1": "",
@@ -19,9 +21,7 @@
       "util_vector_logic_4": "",
       "util_vector_logic_5": "",
       "util_vector_logic_6": "",
-      "util_vector_logic_7": "",
-      "util_vector_logic_8": "",
-      "util_vector_logic_9": ""
+      "util_vector_logic_7": ""
     },
     "ports": {
       "a1": {
@@ -44,26 +44,6 @@
         "left": "0",
         "right": "0"
       },
-      "c1": {
-        "direction": "I",
-        "left": "0",
-        "right": "0"
-      },
-      "c2": {
-        "direction": "I",
-        "left": "0",
-        "right": "0"
-      },
-      "c3": {
-        "direction": "I",
-        "left": "0",
-        "right": "0"
-      },
-      "c4": {
-        "direction": "I",
-        "left": "0",
-        "right": "0"
-      },
       "b1": {
         "direction": "I",
         "left": "0",
@@ -80,6 +60,26 @@
         "right": "0"
       },
       "b4": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "c1": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "c2": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "c3": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "c4": {
         "direction": "I",
         "left": "0",
         "right": "0"
@@ -111,13 +111,21 @@
       }
     },
     "components": {
-      "BCDAdder_0": {
-        "vlnv": "xilinx.com:user:BCDAdder:1.0",
-        "xci_name": "mod11_BCDAdder_0_0"
+      "bcdAdder_0": {
+        "vlnv": "xilinx.com:user:bcdAdder:1.0",
+        "xci_name": "mod11_bcdAdder_0_0"
       },
-      "BCDAdder_1": {
-        "vlnv": "xilinx.com:user:BCDAdder:1.0",
-        "xci_name": "mod11_BCDAdder_0_1"
+      "bcdAdder_1": {
+        "vlnv": "xilinx.com:user:bcdAdder:1.0",
+        "xci_name": "mod11_bcdAdder_0_1"
+      },
+      "Adder_4bit_0": {
+        "vlnv": "xilinx.com:user:Adder_4bit:2.0",
+        "xci_name": "mod11_Adder_4bit_0_0"
+      },
+      "Adder_4bit_1": {
+        "vlnv": "xilinx.com:user:Adder_4bit:2.0",
+        "xci_name": "mod11_Adder_4bit_0_1"
       },
       "xlconstant_0": {
         "vlnv": "xilinx.com:ip:xlconstant:1.1",
@@ -154,7 +162,7 @@
       },
       "util_vector_logic_2": {
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "mod11_util_vector_logic_0_2",
+        "xci_name": "mod11_util_vector_logic_1_0",
         "parameters": {
           "C_OPERATION": {
             "value": "xor"
@@ -166,7 +174,7 @@
       },
       "util_vector_logic_3": {
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "mod11_util_vector_logic_0_3",
+        "xci_name": "mod11_util_vector_logic_2_0",
         "parameters": {
           "C_OPERATION": {
             "value": "xor"
@@ -178,10 +186,10 @@
       },
       "util_vector_logic_4": {
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "mod11_util_vector_logic_0_4",
+        "xci_name": "mod11_util_vector_logic_1_1",
         "parameters": {
           "C_OPERATION": {
-            "value": "xor"
+            "value": "or"
           },
           "C_SIZE": {
             "value": "1"
@@ -190,7 +198,7 @@
       },
       "util_vector_logic_5": {
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "mod11_util_vector_logic_5_0",
+        "xci_name": "mod11_util_vector_logic_4_0",
         "parameters": {
           "C_OPERATION": {
             "value": "or"
@@ -202,7 +210,7 @@
       },
       "util_vector_logic_6": {
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "mod11_util_vector_logic_5_1",
+        "xci_name": "mod11_util_vector_logic_5_0",
         "parameters": {
           "C_OPERATION": {
             "value": "or"
@@ -214,31 +222,7 @@
       },
       "util_vector_logic_7": {
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "mod11_util_vector_logic_5_2",
-        "parameters": {
-          "C_OPERATION": {
-            "value": "or"
-          },
-          "C_SIZE": {
-            "value": "1"
-          }
-        }
-      },
-      "util_vector_logic_8": {
-        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "mod11_util_vector_logic_7_0",
-        "parameters": {
-          "C_OPERATION": {
-            "value": "or"
-          },
-          "C_SIZE": {
-            "value": "1"
-          }
-        }
-      },
-      "util_vector_logic_9": {
-        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "mod11_util_vector_logic_8_0",
+        "xci_name": "mod11_util_vector_logic_6_0",
         "parameters": {
           "C_OPERATION": {
             "value": "not"
@@ -250,197 +234,259 @@
       }
     },
     "nets": {
-      "xlconstant_0_dout": {
-        "ports": [
-          "xlconstant_0/dout",
-          "BCDAdder_0/C_in",
-          "BCDAdder_1/C_in"
-        ]
-      },
       "a1_1": {
         "ports": [
           "a1",
-          "BCDAdder_0/a1"
+          "bcdAdder_0/a1"
         ]
       },
       "a2_1": {
         "ports": [
           "a2",
-          "BCDAdder_0/a2"
+          "bcdAdder_0/a2"
         ]
       },
       "a3_1": {
         "ports": [
           "a3",
-          "BCDAdder_0/a3"
+          "bcdAdder_0/a3"
         ]
       },
       "a4_1": {
         "ports": [
           "a4",
-          "BCDAdder_0/a4"
-        ]
-      },
-      "c1_1": {
-        "ports": [
-          "c1",
-          "BCDAdder_0/b1"
-        ]
-      },
-      "c2_1": {
-        "ports": [
-          "c2",
-          "BCDAdder_0/b2"
-        ]
-      },
-      "c3_1": {
-        "ports": [
-          "c3",
-          "BCDAdder_0/b3"
-        ]
-      },
-      "c4_1": {
-        "ports": [
-          "c4",
-          "BCDAdder_0/b4"
+          "bcdAdder_0/a4"
         ]
       },
       "b1_1": {
         "ports": [
           "b1",
-          "BCDAdder_1/b1"
+          "bcdAdder_1/b1"
         ]
       },
       "b2_1": {
         "ports": [
           "b2",
-          "BCDAdder_1/b2"
+          "bcdAdder_1/b2"
         ]
       },
       "b3_1": {
         "ports": [
           "b3",
-          "BCDAdder_1/b3"
+          "bcdAdder_1/b3"
         ]
       },
       "b4_1": {
         "ports": [
           "b4",
-          "BCDAdder_1/b4"
+          "bcdAdder_1/b4"
+        ]
+      },
+      "c1_1": {
+        "ports": [
+          "c1",
+          "bcdAdder_0/b1"
+        ]
+      },
+      "c2_1": {
+        "ports": [
+          "c2",
+          "bcdAdder_0/b2"
+        ]
+      },
+      "c3_1": {
+        "ports": [
+          "c3",
+          "bcdAdder_0/b3"
+        ]
+      },
+      "c4_1": {
+        "ports": [
+          "c4",
+          "bcdAdder_0/b4"
         ]
       },
       "d1_1": {
         "ports": [
           "d1",
-          "BCDAdder_1/a1"
+          "bcdAdder_1/a1"
         ]
       },
       "d2_1": {
         "ports": [
           "d2",
-          "BCDAdder_1/a2"
+          "bcdAdder_1/a2"
         ]
       },
       "d3_1": {
         "ports": [
           "d3",
-          "BCDAdder_1/a3"
+          "bcdAdder_1/a3"
         ]
       },
       "d4_1": {
         "ports": [
           "d4",
-          "BCDAdder_1/a4"
+          "bcdAdder_1/a4"
         ]
       },
-      "BCDAdder_1_s1": {
+      "bcdAdder_0_s4": {
         "ports": [
-          "BCDAdder_1/s1",
-          "util_vector_logic_1/Op2"
+          "bcdAdder_0/s4",
+          "Adder_4bit_0/b4"
         ]
       },
-      "BCDAdder_0_s2": {
+      "bcdAdder_0_s3": {
         "ports": [
-          "BCDAdder_0/s2",
-          "util_vector_logic_2/Op1"
+          "bcdAdder_0/s3",
+          "Adder_4bit_0/b3"
         ]
       },
-      "BCDAdder_1_s2": {
+      "bcdAdder_0_s2": {
         "ports": [
-          "BCDAdder_1/s2",
-          "util_vector_logic_2/Op2"
+          "bcdAdder_0/s2",
+          "Adder_4bit_0/b2"
         ]
       },
-      "BCDAdder_0_s1": {
+      "bcdAdder_0_s1": {
         "ports": [
-          "BCDAdder_0/s1",
-          "util_vector_logic_1/Op1"
+          "bcdAdder_0/s1",
+          "Adder_4bit_0/b1"
         ]
       },
-      "BCDAdder_0_C_out": {
+      "bcdAdder_0_C_out": {
         "ports": [
-          "BCDAdder_0/C_out",
+          "bcdAdder_0/C_out",
+          "Adder_4bit_0/a4",
+          "Adder_4bit_0/a3",
+          "Adder_4bit_0/a2",
+          "Adder_4bit_0/a1"
+        ]
+      },
+      "bcdAdder_1_s4": {
+        "ports": [
+          "bcdAdder_1/s4",
+          "Adder_4bit_1/b4"
+        ]
+      },
+      "bcdAdder_1_s3": {
+        "ports": [
+          "bcdAdder_1/s3",
+          "Adder_4bit_1/b3"
+        ]
+      },
+      "bcdAdder_1_s2": {
+        "ports": [
+          "bcdAdder_1/s2",
+          "Adder_4bit_1/b2"
+        ]
+      },
+      "bcdAdder_1_s1": {
+        "ports": [
+          "bcdAdder_1/s1",
+          "Adder_4bit_1/b1"
+        ]
+      },
+      "bcdAdder_1_C_out": {
+        "ports": [
+          "bcdAdder_1/C_out",
+          "Adder_4bit_1/a4",
+          "Adder_4bit_1/a3",
+          "Adder_4bit_1/a2",
+          "Adder_4bit_1/a1"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "bcdAdder_0/C_in",
+          "bcdAdder_1/C_in",
+          "Adder_4bit_0/C_in",
+          "Adder_4bit_1/C_in"
+        ]
+      },
+      "Adder_4bit_0_s1": {
+        "ports": [
+          "Adder_4bit_0/s1",
           "util_vector_logic_0/Op1"
         ]
       },
-      "BCDAdder_1_C_out": {
+      "Adder_4bit_1_s1": {
         "ports": [
-          "BCDAdder_1/C_out",
+          "Adder_4bit_1/s1",
           "util_vector_logic_0/Op2"
         ]
       },
-      "BCDAdder_0_s3": {
+      "Adder_4bit_0_s2": {
         "ports": [
-          "BCDAdder_0/s3",
-          "util_vector_logic_3/Op1"
+          "Adder_4bit_0/s2",
+          "util_vector_logic_1/Op1"
         ]
       },
-      "BCDAdder_1_s3": {
+      "Adder_4bit_1_s2": {
         "ports": [
-          "BCDAdder_1/s3",
+          "Adder_4bit_1/s2",
+          "util_vector_logic_1/Op2"
+        ]
+      },
+      "Adder_4bit_0_s3": {
+        "ports": [
+          "Adder_4bit_0/s3",
+          "util_vector_logic_2/Op1"
+        ]
+      },
+      "Adder_4bit_1_s3": {
+        "ports": [
+          "Adder_4bit_1/s3",
+          "util_vector_logic_2/Op2"
+        ]
+      },
+      "Adder_4bit_1_s4": {
+        "ports": [
+          "Adder_4bit_1/s4",
           "util_vector_logic_3/Op2"
         ]
       },
-      "BCDAdder_0_s4": {
+      "Adder_4bit_0_s4": {
         "ports": [
-          "BCDAdder_0/s4",
-          "util_vector_logic_4/Op1"
-        ]
-      },
-      "BCDAdder_1_s4": {
-        "ports": [
-          "BCDAdder_1/s4",
-          "util_vector_logic_4/Op2"
+          "Adder_4bit_0/s4",
+          "util_vector_logic_3/Op1"
         ]
       },
       "util_vector_logic_0_Res": {
         "ports": [
           "util_vector_logic_0/Res",
-          "util_vector_logic_5/Op1"
+          "util_vector_logic_4/Op1"
         ]
       },
       "util_vector_logic_1_Res": {
         "ports": [
           "util_vector_logic_1/Res",
-          "util_vector_logic_5/Op2"
+          "util_vector_logic_4/Op2"
         ]
       },
       "util_vector_logic_2_Res": {
         "ports": [
           "util_vector_logic_2/Res",
-          "util_vector_logic_6/Op2"
-        ]
-      },
-      "util_vector_logic_5_Res": {
-        "ports": [
-          "util_vector_logic_5/Res",
-          "util_vector_logic_6/Op1"
+          "util_vector_logic_5/Op1"
         ]
       },
       "util_vector_logic_3_Res": {
         "ports": [
           "util_vector_logic_3/Res",
-          "util_vector_logic_7/Op2"
+          "util_vector_logic_5/Op2"
+        ]
+      },
+      "util_vector_logic_4_Res": {
+        "ports": [
+          "util_vector_logic_4/Res",
+          "util_vector_logic_6/Op1"
+        ]
+      },
+      "util_vector_logic_5_Res": {
+        "ports": [
+          "util_vector_logic_5/Res",
+          "util_vector_logic_6/Op2"
         ]
       },
       "util_vector_logic_6_Res": {
@@ -449,27 +495,9 @@
           "util_vector_logic_7/Op1"
         ]
       },
-      "util_vector_logic_4_Res": {
-        "ports": [
-          "util_vector_logic_4/Res",
-          "util_vector_logic_8/Op2"
-        ]
-      },
       "util_vector_logic_7_Res": {
         "ports": [
           "util_vector_logic_7/Res",
-          "util_vector_logic_8/Op1"
-        ]
-      },
-      "util_vector_logic_8_Res": {
-        "ports": [
-          "util_vector_logic_8/Res",
-          "util_vector_logic_9/Op1"
-        ]
-      },
-      "util_vector_logic_9_Res": {
-        "ports": [
-          "util_vector_logic_9/Res",
           "o"
         ]
       }

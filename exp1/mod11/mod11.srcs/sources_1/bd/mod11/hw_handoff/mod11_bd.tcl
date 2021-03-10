@@ -176,11 +176,17 @@ proc create_root_design { parentCell } {
   set d4 [ create_bd_port -dir I -from 0 -to 0 d4 ]
   set o [ create_bd_port -dir O -from 0 -to 0 o ]
 
-  # Create instance: BCDAdder_0, and set properties
-  set BCDAdder_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:BCDAdder:1.0 BCDAdder_0 ]
+  # Create instance: Adder_4bit_0, and set properties
+  set Adder_4bit_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:Adder_4bit:2.0 Adder_4bit_0 ]
 
-  # Create instance: BCDAdder_1, and set properties
-  set BCDAdder_1 [ create_bd_cell -type ip -vlnv xilinx.com:user:BCDAdder:1.0 BCDAdder_1 ]
+  # Create instance: Adder_4bit_1, and set properties
+  set Adder_4bit_1 [ create_bd_cell -type ip -vlnv xilinx.com:user:Adder_4bit:2.0 Adder_4bit_1 ]
+
+  # Create instance: bcdAdder_0, and set properties
+  set bcdAdder_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:bcdAdder:1.0 bcdAdder_0 ]
+
+  # Create instance: bcdAdder_1, and set properties
+  set bcdAdder_1 [ create_bd_cell -type ip -vlnv xilinx.com:user:bcdAdder:1.0 bcdAdder_1 ]
 
   # Create instance: util_vector_logic_0, and set properties
   set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
@@ -217,9 +223,9 @@ proc create_root_design { parentCell } {
   # Create instance: util_vector_logic_4, and set properties
   set util_vector_logic_4 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_4 ]
   set_property -dict [ list \
-   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_OPERATION {or} \
    CONFIG.C_SIZE {1} \
-   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+   CONFIG.LOGO_FILE {data/sym_orgate.png} \
  ] $util_vector_logic_4
 
   # Create instance: util_vector_logic_5, and set properties
@@ -241,26 +247,10 @@ proc create_root_design { parentCell } {
   # Create instance: util_vector_logic_7, and set properties
   set util_vector_logic_7 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_7 ]
   set_property -dict [ list \
-   CONFIG.C_OPERATION {or} \
-   CONFIG.C_SIZE {1} \
-   CONFIG.LOGO_FILE {data/sym_orgate.png} \
- ] $util_vector_logic_7
-
-  # Create instance: util_vector_logic_8, and set properties
-  set util_vector_logic_8 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_8 ]
-  set_property -dict [ list \
-   CONFIG.C_OPERATION {or} \
-   CONFIG.C_SIZE {1} \
-   CONFIG.LOGO_FILE {data/sym_orgate.png} \
- ] $util_vector_logic_8
-
-  # Create instance: util_vector_logic_9, and set properties
-  set util_vector_logic_9 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_9 ]
-  set_property -dict [ list \
    CONFIG.C_OPERATION {not} \
    CONFIG.C_SIZE {1} \
    CONFIG.LOGO_FILE {data/sym_notgate.png} \
- ] $util_vector_logic_9
+ ] $util_vector_logic_7
 
   # Create instance: xlconstant_0, and set properties
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
@@ -269,43 +259,49 @@ proc create_root_design { parentCell } {
  ] $xlconstant_0
 
   # Create port connections
-  connect_bd_net -net BCDAdder_0_C_out [get_bd_pins BCDAdder_0/C_out] [get_bd_pins util_vector_logic_0/Op1]
-  connect_bd_net -net BCDAdder_0_s1 [get_bd_pins BCDAdder_0/s1] [get_bd_pins util_vector_logic_1/Op1]
-  connect_bd_net -net BCDAdder_0_s2 [get_bd_pins BCDAdder_0/s2] [get_bd_pins util_vector_logic_2/Op1]
-  connect_bd_net -net BCDAdder_0_s3 [get_bd_pins BCDAdder_0/s3] [get_bd_pins util_vector_logic_3/Op1]
-  connect_bd_net -net BCDAdder_0_s4 [get_bd_pins BCDAdder_0/s4] [get_bd_pins util_vector_logic_4/Op1]
-  connect_bd_net -net BCDAdder_1_C_out [get_bd_pins BCDAdder_1/C_out] [get_bd_pins util_vector_logic_0/Op2]
-  connect_bd_net -net BCDAdder_1_s1 [get_bd_pins BCDAdder_1/s1] [get_bd_pins util_vector_logic_1/Op2]
-  connect_bd_net -net BCDAdder_1_s2 [get_bd_pins BCDAdder_1/s2] [get_bd_pins util_vector_logic_2/Op2]
-  connect_bd_net -net BCDAdder_1_s3 [get_bd_pins BCDAdder_1/s3] [get_bd_pins util_vector_logic_3/Op2]
-  connect_bd_net -net BCDAdder_1_s4 [get_bd_pins BCDAdder_1/s4] [get_bd_pins util_vector_logic_4/Op2]
-  connect_bd_net -net a1_1 [get_bd_ports a1] [get_bd_pins BCDAdder_0/a1]
-  connect_bd_net -net a2_1 [get_bd_ports a2] [get_bd_pins BCDAdder_0/a2]
-  connect_bd_net -net a3_1 [get_bd_ports a3] [get_bd_pins BCDAdder_0/a3]
-  connect_bd_net -net a4_1 [get_bd_ports a4] [get_bd_pins BCDAdder_0/a4]
-  connect_bd_net -net b1_1 [get_bd_ports b1] [get_bd_pins BCDAdder_1/b1]
-  connect_bd_net -net b2_1 [get_bd_ports b2] [get_bd_pins BCDAdder_1/b2]
-  connect_bd_net -net b3_1 [get_bd_ports b3] [get_bd_pins BCDAdder_1/b3]
-  connect_bd_net -net b4_1 [get_bd_ports b4] [get_bd_pins BCDAdder_1/b4]
-  connect_bd_net -net c1_1 [get_bd_ports c1] [get_bd_pins BCDAdder_0/b1]
-  connect_bd_net -net c2_1 [get_bd_ports c2] [get_bd_pins BCDAdder_0/b2]
-  connect_bd_net -net c3_1 [get_bd_ports c3] [get_bd_pins BCDAdder_0/b3]
-  connect_bd_net -net c4_1 [get_bd_ports c4] [get_bd_pins BCDAdder_0/b4]
-  connect_bd_net -net d1_1 [get_bd_ports d1] [get_bd_pins BCDAdder_1/a1]
-  connect_bd_net -net d2_1 [get_bd_ports d2] [get_bd_pins BCDAdder_1/a2]
-  connect_bd_net -net d3_1 [get_bd_ports d3] [get_bd_pins BCDAdder_1/a3]
-  connect_bd_net -net d4_1 [get_bd_ports d4] [get_bd_pins BCDAdder_1/a4]
-  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_5/Op1]
-  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins util_vector_logic_1/Res] [get_bd_pins util_vector_logic_5/Op2]
-  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_6/Op2]
-  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins util_vector_logic_3/Res] [get_bd_pins util_vector_logic_7/Op2]
-  connect_bd_net -net util_vector_logic_4_Res [get_bd_pins util_vector_logic_4/Res] [get_bd_pins util_vector_logic_8/Op2]
-  connect_bd_net -net util_vector_logic_5_Res [get_bd_pins util_vector_logic_5/Res] [get_bd_pins util_vector_logic_6/Op1]
+  connect_bd_net -net Adder_4bit_0_s1 [get_bd_pins Adder_4bit_0/s1] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net Adder_4bit_0_s2 [get_bd_pins Adder_4bit_0/s2] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net Adder_4bit_0_s3 [get_bd_pins Adder_4bit_0/s3] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net Adder_4bit_0_s4 [get_bd_pins Adder_4bit_0/s4] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net Adder_4bit_1_s1 [get_bd_pins Adder_4bit_1/s1] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net Adder_4bit_1_s2 [get_bd_pins Adder_4bit_1/s2] [get_bd_pins util_vector_logic_1/Op2]
+  connect_bd_net -net Adder_4bit_1_s3 [get_bd_pins Adder_4bit_1/s3] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net Adder_4bit_1_s4 [get_bd_pins Adder_4bit_1/s4] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net a1_1 [get_bd_ports a1] [get_bd_pins bcdAdder_0/a1]
+  connect_bd_net -net a2_1 [get_bd_ports a2] [get_bd_pins bcdAdder_0/a2]
+  connect_bd_net -net a3_1 [get_bd_ports a3] [get_bd_pins bcdAdder_0/a3]
+  connect_bd_net -net a4_1 [get_bd_ports a4] [get_bd_pins bcdAdder_0/a4]
+  connect_bd_net -net b1_1 [get_bd_ports b1] [get_bd_pins bcdAdder_1/b1]
+  connect_bd_net -net b2_1 [get_bd_ports b2] [get_bd_pins bcdAdder_1/b2]
+  connect_bd_net -net b3_1 [get_bd_ports b3] [get_bd_pins bcdAdder_1/b3]
+  connect_bd_net -net b4_1 [get_bd_ports b4] [get_bd_pins bcdAdder_1/b4]
+  connect_bd_net -net bcdAdder_0_C_out [get_bd_pins Adder_4bit_0/a1] [get_bd_pins Adder_4bit_0/a2] [get_bd_pins Adder_4bit_0/a3] [get_bd_pins Adder_4bit_0/a4] [get_bd_pins bcdAdder_0/C_out]
+  connect_bd_net -net bcdAdder_0_s1 [get_bd_pins Adder_4bit_0/b1] [get_bd_pins bcdAdder_0/s1]
+  connect_bd_net -net bcdAdder_0_s2 [get_bd_pins Adder_4bit_0/b2] [get_bd_pins bcdAdder_0/s2]
+  connect_bd_net -net bcdAdder_0_s3 [get_bd_pins Adder_4bit_0/b3] [get_bd_pins bcdAdder_0/s3]
+  connect_bd_net -net bcdAdder_0_s4 [get_bd_pins Adder_4bit_0/b4] [get_bd_pins bcdAdder_0/s4]
+  connect_bd_net -net bcdAdder_1_C_out [get_bd_pins Adder_4bit_1/a1] [get_bd_pins Adder_4bit_1/a2] [get_bd_pins Adder_4bit_1/a3] [get_bd_pins Adder_4bit_1/a4] [get_bd_pins bcdAdder_1/C_out]
+  connect_bd_net -net bcdAdder_1_s1 [get_bd_pins Adder_4bit_1/b1] [get_bd_pins bcdAdder_1/s1]
+  connect_bd_net -net bcdAdder_1_s2 [get_bd_pins Adder_4bit_1/b2] [get_bd_pins bcdAdder_1/s2]
+  connect_bd_net -net bcdAdder_1_s3 [get_bd_pins Adder_4bit_1/b3] [get_bd_pins bcdAdder_1/s3]
+  connect_bd_net -net bcdAdder_1_s4 [get_bd_pins Adder_4bit_1/b4] [get_bd_pins bcdAdder_1/s4]
+  connect_bd_net -net c1_1 [get_bd_ports c1] [get_bd_pins bcdAdder_0/b1]
+  connect_bd_net -net c2_1 [get_bd_ports c2] [get_bd_pins bcdAdder_0/b2]
+  connect_bd_net -net c3_1 [get_bd_ports c3] [get_bd_pins bcdAdder_0/b3]
+  connect_bd_net -net c4_1 [get_bd_ports c4] [get_bd_pins bcdAdder_0/b4]
+  connect_bd_net -net d1_1 [get_bd_ports d1] [get_bd_pins bcdAdder_1/a1]
+  connect_bd_net -net d2_1 [get_bd_ports d2] [get_bd_pins bcdAdder_1/a2]
+  connect_bd_net -net d3_1 [get_bd_ports d3] [get_bd_pins bcdAdder_1/a3]
+  connect_bd_net -net d4_1 [get_bd_ports d4] [get_bd_pins bcdAdder_1/a4]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_4/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins util_vector_logic_1/Res] [get_bd_pins util_vector_logic_4/Op2]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_5/Op1]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins util_vector_logic_3/Res] [get_bd_pins util_vector_logic_5/Op2]
+  connect_bd_net -net util_vector_logic_4_Res [get_bd_pins util_vector_logic_4/Res] [get_bd_pins util_vector_logic_6/Op1]
+  connect_bd_net -net util_vector_logic_5_Res [get_bd_pins util_vector_logic_5/Res] [get_bd_pins util_vector_logic_6/Op2]
   connect_bd_net -net util_vector_logic_6_Res [get_bd_pins util_vector_logic_6/Res] [get_bd_pins util_vector_logic_7/Op1]
-  connect_bd_net -net util_vector_logic_7_Res [get_bd_pins util_vector_logic_7/Res] [get_bd_pins util_vector_logic_8/Op1]
-  connect_bd_net -net util_vector_logic_8_Res [get_bd_pins util_vector_logic_8/Res] [get_bd_pins util_vector_logic_9/Op1]
-  connect_bd_net -net util_vector_logic_9_Res [get_bd_ports o] [get_bd_pins util_vector_logic_9/Res]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins BCDAdder_0/C_in] [get_bd_pins BCDAdder_1/C_in] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net util_vector_logic_7_Res [get_bd_ports o] [get_bd_pins util_vector_logic_7/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Adder_4bit_0/C_in] [get_bd_pins Adder_4bit_1/C_in] [get_bd_pins bcdAdder_0/C_in] [get_bd_pins bcdAdder_1/C_in] [get_bd_pins xlconstant_0/dout]
 
   # Create address segments
 

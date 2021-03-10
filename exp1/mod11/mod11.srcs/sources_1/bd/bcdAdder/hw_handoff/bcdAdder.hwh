@@ -1,9 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Mar  9 19:41:08 2021" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Mar 10 07:15:16 2021" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="kintex7" BOARD="xilinx.com:kc705:part0:1.6" DEVICE="7k325t" NAME="bcdAdder" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
   <EXTERNALPORTS>
+    <PORT DIR="I" LEFT="0" NAME="C_in" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_C_in">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Adder_4bit_0" PORT="C_in"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT DIR="I" LEFT="0" NAME="a1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_a1">
       <CONNECTIONS>
         <CONNECTION INSTANCE="Adder_4bit_0" PORT="a1"/>
@@ -44,16 +49,6 @@
         <CONNECTION INSTANCE="Adder_4bit_0" PORT="b4"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="0" NAME="C_in" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_C_in">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="Adder_4bit_0" PORT="C_in"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="0" NAME="C_out" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_1_C_out">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="Adder_4bit_1" PORT="C_out"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="O" LEFT="0" NAME="s1" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_1_s1">
       <CONNECTIONS>
         <CONNECTION INSTANCE="Adder_4bit_1" PORT="s1"/>
@@ -74,12 +69,17 @@
         <CONNECTION INSTANCE="Adder_4bit_1" PORT="s4"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="O" LEFT="0" NAME="C_out" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_3_Res">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util_vector_logic_3" PORT="Res"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES/>
 
   <MODULES>
-    <MODULE COREREVISION="2" FULLNAME="/Adder_4bit_0" HWVERSION="1.0" INSTANCE="Adder_4bit_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Adder_4bit" VLNV="xilinx.com:user:Adder_4bit:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/Adder_4bit_0" HWVERSION="2.0" INSTANCE="Adder_4bit_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Adder_4bit" VLNV="xilinx.com:user:Adder_4bit:2.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="bcdAdder_Adder_4bit_0_0"/>
@@ -163,7 +163,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/Adder_4bit_1" HWVERSION="1.0" INSTANCE="Adder_4bit_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Adder_4bit" VLNV="xilinx.com:user:Adder_4bit:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/Adder_4bit_1" HWVERSION="2.0" INSTANCE="Adder_4bit_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Adder_4bit" VLNV="xilinx.com:user:Adder_4bit:2.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="bcdAdder_Adder_4bit_0_1"/>
@@ -175,11 +175,7 @@
             <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="C_out" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_1_C_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="C_out"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="C_out" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="0" NAME="a1" RIGHT="0" SIGIS="undef" SIGNAME="Adder_4bit_0_s1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Adder_4bit_0" PORT="s1"/>
@@ -349,8 +345,9 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_3_Res">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Adder_4bit_1" PORT="b2"/>
             <CONNECTION INSTANCE="Adder_4bit_1" PORT="b3"/>
+            <CONNECTION INSTANCE="Adder_4bit_1" PORT="b2"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="C_out"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -367,9 +364,9 @@
       <PORTS>
         <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
           <CONNECTIONS>
+            <CONNECTION INSTANCE="Adder_4bit_1" PORT="C_in"/>
             <CONNECTION INSTANCE="Adder_4bit_1" PORT="b4"/>
             <CONNECTION INSTANCE="Adder_4bit_1" PORT="b1"/>
-            <CONNECTION INSTANCE="Adder_4bit_1" PORT="C_in"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

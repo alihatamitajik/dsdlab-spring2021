@@ -2,13 +2,12 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="FullAdder" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1615311395"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1615311395"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1615311395"/>
+    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1615330069"/>
+    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1615330069"/>
+    <Generation Name="SIMULATION" State="STALE" Timestamp="1615330068"/>
     <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1615311395"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\FullAdder_util_vector_logic_0_0\FullAdder_util_vector_logic_0_0.xci" Type="IP">
-        <Instance HierarchyPath="util_vector_logic_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -16,7 +15,6 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\FullAdder_util_vector_logic_0_1\FullAdder_util_vector_logic_0_1.xci" Type="IP">
-        <Instance HierarchyPath="util_vector_logic_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -24,7 +22,6 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\FullAdder_util_vector_logic_0_2\FullAdder_util_vector_logic_0_2.xci" Type="IP">
-        <Instance HierarchyPath="util_vector_logic_2"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -32,7 +29,6 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\FullAdder_util_vector_logic_0_3\FullAdder_util_vector_logic_0_3.xci" Type="IP">
-        <Instance HierarchyPath="util_vector_logic_3"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -40,7 +36,6 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\FullAdder_util_vector_logic_0_4\FullAdder_util_vector_logic_0_4.xci" Type="IP">
-        <Instance HierarchyPath="util_vector_logic_4"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -57,13 +52,6 @@
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="FullAdder_ooc.xdc" Type="XDC">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="OUT_OF_CONTEXT"/>
       </File>
       <File Name="hw_handoff\FullAdder.hwh" Type="HwHandoff">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
@@ -85,33 +73,52 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\FullAdder_util_vector_logic_1_0\FullAdder_util_vector_logic_1_0.xci" Type="IP">
+      <File Name="ip\FullAdder_util_vector_logic_0_5\FullAdder_util_vector_logic_0_5.xci" Type="IP">
+        <Instance HierarchyPath="util_vector_logic_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\FullAdder_util_vector_logic_2_0\FullAdder_util_vector_logic_2_0.xci" Type="IP">
+      <File Name="ip\FullAdder_util_vector_logic_1_1\FullAdder_util_vector_logic_1_1.xci" Type="IP">
+        <Instance HierarchyPath="util_vector_logic_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\FullAdder_util_vector_logic_3_0\FullAdder_util_vector_logic_3_0.xci" Type="IP">
+      <File Name="ip\FullAdder_util_vector_logic_2_1\FullAdder_util_vector_logic_2_1.xci" Type="IP">
+        <Instance HierarchyPath="util_vector_logic_2"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\FullAdder_util_vector_logic_4_0\FullAdder_util_vector_logic_4_0.xci" Type="IP">
+      <File Name="ip\FullAdder_util_vector_logic_3_1\FullAdder_util_vector_logic_3_1.xci" Type="IP">
+        <Instance HierarchyPath="util_vector_logic_3"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\FullAdder_util_vector_logic_4_1\FullAdder_util_vector_logic_4_1.xci" Type="IP">
+        <Instance HierarchyPath="util_vector_logic_4"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="FullAdder_ooc.xdc" Type="XDC">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="OUT_OF_CONTEXT"/>
       </File>
     </FileCollection>
   </CompositeFile>

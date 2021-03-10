@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-//Date        : Tue Mar  9 14:54:48 2021
+//Date        : Wed Mar 10 06:31:50 2021
 //Host        : Hatam-Desktop running 64-bit major release  (build 9200)
 //Command     : generate_target Adder_4bit_wrapper.bd
 //Design      : Adder_4bit_wrapper
