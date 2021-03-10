@@ -240,7 +240,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net util_vector_logic_1_Res [get_bd_pins util_vector_logic_1/Res] [get_bd_pins util_vector_logic_2/Op2]
   connect_bd_net -net util_vector_logic_2_Res [get_bd_pins binadd4b_1/B1] [get_bd_pins binadd4b_1/B2] [get_bd_pins util_vector_logic_2/Res]
   connect_bd_net -net util_vector_logic_3_Res [get_bd_ports C_out] [get_bd_pins util_vector_logic_3/Res]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins binadd4b_1/B0] [get_bd_pins binadd4b_1/B3] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins binadd4b_1/B0] [get_bd_pins binadd4b_1/B3] [get_bd_pins binadd4b_1/C_in] [get_bd_pins xlconstant_0/dout]
 
   # Create address segments
 

@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-//Date        : Tue Mar  9 22:45:27 2021
+//Date        : Wed Mar 10 09:11:31 2021
 //Host        : SOROUSHJAHA7F01 running 64-bit major release  (build 9200)
 //Command     : generate_target BCDAWOC.bd
 //Design      : BCDAWOC
@@ -103,7 +103,7 @@ module BCDAWOC
         .B1(util_vector_logic_2_Res),
         .B2(util_vector_logic_2_Res),
         .B3(xlconstant_0_dout),
-        .C_in(1'b0),
+        .C_in(xlconstant_0_dout),
         .C_out(binadd4b_1_C_out),
         .S0(binadd4b_1_S0),
         .S1(binadd4b_1_S1),

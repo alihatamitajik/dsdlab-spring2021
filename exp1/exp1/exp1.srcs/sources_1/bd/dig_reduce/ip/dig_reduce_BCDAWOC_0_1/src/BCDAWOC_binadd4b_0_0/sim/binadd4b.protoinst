@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"binadd4b": {
+			"proto_instances": {
+			}
+		}
+	}
+}

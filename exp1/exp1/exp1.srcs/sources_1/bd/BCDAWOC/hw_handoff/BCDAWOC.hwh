@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Mar  9 22:45:29 2021" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Mar 10 09:13:03 2021" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="virtex7" DEVICE="7vx485t" NAME="BCDAWOC" PACKAGE="ffg1157" SPEEDGRADE="-1"/>
 
@@ -210,7 +210,11 @@
             <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="C_in" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="C_in" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="0" NAME="C_out" RIGHT="0" SIGIS="undef" SIGNAME="binadd4b_1_C_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_vector_logic_3" PORT="Op1"/>
@@ -365,6 +369,7 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="binadd4b_1" PORT="B0"/>
             <CONNECTION INSTANCE="binadd4b_1" PORT="B3"/>
+            <CONNECTION INSTANCE="binadd4b_1" PORT="C_in"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

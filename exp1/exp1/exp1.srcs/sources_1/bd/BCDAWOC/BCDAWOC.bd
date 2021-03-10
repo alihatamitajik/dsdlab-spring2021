@@ -5,7 +5,8 @@
       "device": "xc7vx485tffg1157-1",
       "name": "BCDAWOC",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2019.1"
+      "tool_version": "2019.1",
+      "validated": "true"
     },
     "design_tree": {
       "binadd4b_0": "",
