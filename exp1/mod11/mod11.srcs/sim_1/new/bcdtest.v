@@ -23,6 +23,7 @@
 module bcdtest;
     reg [3:0] dig1 = 0;
     reg [3:0] dig2 = 0;
+    reg [0:0] c_in = 0;
     wire [0:0]c_out;
     wire [0:0]s1;
     wire [0:0]s2;
@@ -30,7 +31,7 @@ module bcdtest;
     wire [0:0]s4;
     
     bcdAdder_wrapper uut (
-        .C_in (0),
+        .C_in (c_in),
         .C_out (c_out),
         .a1 (dig1[0]),
         .a2 (dig1[1]),
@@ -48,9 +49,11 @@ module bcdtest;
     
     integer i = 0;
     integer j = 0;
-    
+    integer k = 0;
     initial
     begin
+    for (k = 0; k<2;k = k+ 1) begin
+        c_in = k;
         for (i = 0; i < 10; i = i + 1) begin
             for (j = 0; j < 10; j = j + 1) begin
                 # 10 
@@ -58,8 +61,8 @@ module bcdtest;
                 dig2 = i;
             end
         end
-        
-        #5 $finish;
+    end    
+    #5 $finish;
     end
     
 endmodule

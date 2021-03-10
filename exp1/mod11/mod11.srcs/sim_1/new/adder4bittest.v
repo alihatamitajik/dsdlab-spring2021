@@ -23,7 +23,7 @@
 module adder4bittest;
     reg [3:0] num1 = 0;
     reg [3:0] num2 = 0;
-    reg [0:0] c_in = 1;
+    reg [0:0] c_in = 0;
     wire [3:0] sum;
     wire [0:0] c_out;
  Adder_4bit_wrapper uut(
@@ -43,13 +43,16 @@ module adder4bittest;
     .s4 (sum[3])
     );
     
-    integer i = 0, j=0;
+    integer i = 0, j=0, k=0;
     initial begin
-        for (i = 0; i < 11; i = i + 1)
-            for (j = 0; j < 11; j = j + 1) begin
+    for (k = 0; k < 2; k= k +1)begin
+        c_in = k;
+        for (i = 0; i < 16; i = i + 1)
+            for (j = 0; j < 16; j = j + 1) begin
                 #10 num1 = i;
                 num2 = j;
             end  
+    end
         #5 $finish;
     end
 endmodule
