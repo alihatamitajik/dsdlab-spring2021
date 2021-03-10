@@ -1,11 +1,312 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x0",
+      "boundary_crc": "0x9028903290289032",
+      "device": "xc7vx485tffg1157-1",
       "name": "BCDAWOC",
       "synth_flow_mode": "Hierarchical",
       "tool_version": "2019.1"
     },
-    "design_tree": {}
+    "design_tree": {
+      "binadd4b_0": "",
+      "binadd4b_1": "",
+      "util_vector_logic_0": "",
+      "util_vector_logic_1": "",
+      "xlconstant_0": "",
+      "util_vector_logic_2": "",
+      "util_vector_logic_3": ""
+    },
+    "ports": {
+      "A0": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "A1": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "A2": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "A3": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "B0": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "B1": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "B2": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "B3": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "C_in": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "S0": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "S1": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "S2": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "S3": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "C_out": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      }
+    },
+    "components": {
+      "binadd4b_0": {
+        "vlnv": "Group5:user:binadd4b:1.0",
+        "xci_name": "BCDAWOC_binadd4b_0_0"
+      },
+      "binadd4b_1": {
+        "vlnv": "Group5:user:binadd4b:1.0",
+        "xci_name": "BCDAWOC_binadd4b_0_1"
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "BCDAWOC_util_vector_logic_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "BCDAWOC_util_vector_logic_0_1",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "and"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "BCDAWOC_xlconstant_0_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          }
+        }
+      },
+      "util_vector_logic_2": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "BCDAWOC_util_vector_logic_1_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_3": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "BCDAWOC_util_vector_logic_2_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      }
+    },
+    "nets": {
+      "binadd4b_0_S0": {
+        "ports": [
+          "binadd4b_0/S0",
+          "binadd4b_1/A0"
+        ]
+      },
+      "binadd4b_0_S1": {
+        "ports": [
+          "binadd4b_0/S1",
+          "binadd4b_1/A1",
+          "util_vector_logic_0/Op1"
+        ]
+      },
+      "binadd4b_0_S2": {
+        "ports": [
+          "binadd4b_0/S2",
+          "binadd4b_1/A2",
+          "util_vector_logic_0/Op2"
+        ]
+      },
+      "binadd4b_0_S3": {
+        "ports": [
+          "binadd4b_0/S3",
+          "binadd4b_1/A3",
+          "util_vector_logic_1/Op1"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "util_vector_logic_1/Op2"
+        ]
+      },
+      "A0_1": {
+        "ports": [
+          "A0",
+          "binadd4b_0/A0"
+        ]
+      },
+      "A1_1": {
+        "ports": [
+          "A1",
+          "binadd4b_0/A1"
+        ]
+      },
+      "A2_1": {
+        "ports": [
+          "A2",
+          "binadd4b_0/A2"
+        ]
+      },
+      "A3_1": {
+        "ports": [
+          "A3",
+          "binadd4b_0/A3"
+        ]
+      },
+      "B0_1": {
+        "ports": [
+          "B0",
+          "binadd4b_0/B0"
+        ]
+      },
+      "B1_1": {
+        "ports": [
+          "B1",
+          "binadd4b_0/B1"
+        ]
+      },
+      "B2_1": {
+        "ports": [
+          "B2",
+          "binadd4b_0/B2"
+        ]
+      },
+      "B3_1": {
+        "ports": [
+          "B3",
+          "binadd4b_0/B3"
+        ]
+      },
+      "C_in_1": {
+        "ports": [
+          "C_in",
+          "binadd4b_0/C_in"
+        ]
+      },
+      "binadd4b_1_S0": {
+        "ports": [
+          "binadd4b_1/S0",
+          "S0"
+        ]
+      },
+      "binadd4b_1_S1": {
+        "ports": [
+          "binadd4b_1/S1",
+          "S1"
+        ]
+      },
+      "binadd4b_1_S2": {
+        "ports": [
+          "binadd4b_1/S2",
+          "S2"
+        ]
+      },
+      "binadd4b_1_S3": {
+        "ports": [
+          "binadd4b_1/S3",
+          "S3"
+        ]
+      },
+      "binadd4b_0_C_out": {
+        "ports": [
+          "binadd4b_0/C_out",
+          "util_vector_logic_2/Op1",
+          "util_vector_logic_3/Op2"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "binadd4b_1/B0",
+          "binadd4b_1/B3",
+          "binadd4b_1/C_in"
+        ]
+      },
+      "util_vector_logic_1_Res": {
+        "ports": [
+          "util_vector_logic_1/Res",
+          "util_vector_logic_2/Op2"
+        ]
+      },
+      "util_vector_logic_2_Res": {
+        "ports": [
+          "util_vector_logic_2/Res",
+          "binadd4b_1/B1",
+          "binadd4b_1/B2"
+        ]
+      },
+      "util_vector_logic_3_Res": {
+        "ports": [
+          "util_vector_logic_3/Res",
+          "C_out"
+        ]
+      },
+      "binadd4b_1_C_out": {
+        "ports": [
+          "binadd4b_1/C_out",
+          "util_vector_logic_3/Op1"
+        ]
+      }
+    }
   }
 }
