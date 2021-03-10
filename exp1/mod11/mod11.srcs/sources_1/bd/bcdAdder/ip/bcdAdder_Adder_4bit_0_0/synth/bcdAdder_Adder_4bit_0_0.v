@@ -47,12 +47,12 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:user:Adder_4bit:1.0
+// IP VLNV: xilinx.com:user:Adder_4bit:2.0
 // IP Revision: 2
 
 (* X_CORE_INFO = "Adder_4bit,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "bcdAdder_Adder_4bit_0_0,Adder_4bit,{}" *)
-(* CORE_GENERATION_INFO = "bcdAdder_Adder_4bit_0_0,Adder_4bit,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=Adder_4bit,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "bcdAdder_Adder_4bit_0_0,Adder_4bit,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=Adder_4bit,x_ipVersion=2.0,x_ipCoreRevision=2,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
 (* IP_DEFINITION_SOURCE = "IPI" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module bcdAdder_Adder_4bit_0_0 (

@@ -47,7 +47,7 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:user:Adder_4bit:1.0
+// IP VLNV: xilinx.com:user:Adder_4bit:2.0
 // IP Revision: 2
 
 `timescale 1ns/1ps

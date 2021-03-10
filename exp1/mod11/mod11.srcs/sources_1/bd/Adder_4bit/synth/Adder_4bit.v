@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-//Date        : Tue Mar  9 14:54:48 2021
+//Date        : Wed Mar 10 06:31:50 2021
 //Host        : Hatam-Desktop running 64-bit major release  (build 9200)
 //Command     : generate_target Adder_4bit.bd
 //Design      : Adder_4bit
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "Adder_4bit,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Adder_4bit,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=8,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=4,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Adder_4bit.hwdef" *) 
+(* CORE_GENERATION_INFO = "Adder_4bit,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Adder_4bit,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=4,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=4,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Adder_4bit.hwdef" *) 
 module Adder_4bit
    (C_in,
     C_out,
@@ -57,13 +57,9 @@ module Adder_4bit
   wire [0:0]b2_1;
   wire [0:0]b3_1;
   wire [0:0]b4_1;
-  wire [0:0]util_vector_logic_0_Res;
-  wire [0:0]util_vector_logic_1_Res;
-  wire [0:0]util_vector_logic_2_Res;
-  wire [0:0]util_vector_logic_3_Res;
 
   assign C_in_1 = C_in[0];
-  assign C_out[0] = FullAdder_2_C_out;
+  assign C_out[0] = FullAdder_3_C_out;
   assign a1_1 = a1[0];
   assign a2_1 = a2[0];
   assign a3_1 = a3[0];
@@ -74,46 +70,30 @@ module Adder_4bit
   assign b4_1 = b4[0];
   assign s1[0] = FullAdder_0_Sum;
   assign s2[0] = FullAdder_1_Sum;
-  assign s3[0] = FullAdder_3_Sum;
-  assign s4[0] = FullAdder_2_Sum;
-  Adder_4bit_FullAdder_0_0 FullAdder_0
-       (.A(C_in_1),
-        .B(a1_1),
-        .C_in(util_vector_logic_0_Res),
+  assign s3[0] = FullAdder_2_Sum;
+  assign s4[0] = FullAdder_3_Sum;
+  Adder_4bit_FullAdder_0_7 FullAdder_0
+       (.A(a1_1),
+        .B(b1_1),
+        .C_in(C_in_1),
         .C_out(FullAdder_0_C_out),
         .Sum(FullAdder_0_Sum));
-  Adder_4bit_FullAdder_0_1 FullAdder_1
-       (.A(FullAdder_0_C_out),
-        .B(util_vector_logic_1_Res),
-        .C_in(a2_1),
+  Adder_4bit_FullAdder_0_8 FullAdder_1
+       (.A(a2_1),
+        .B(b2_1),
+        .C_in(FullAdder_0_C_out),
         .C_out(FullAdder_1_C_out),
         .Sum(FullAdder_1_Sum));
-  Adder_4bit_FullAdder_0_2 FullAdder_2
-       (.A(FullAdder_3_C_out),
-        .B(util_vector_logic_3_Res),
-        .C_in(a4_1),
+  Adder_4bit_FullAdder_1_3 FullAdder_2
+       (.A(a3_1),
+        .B(b3_1),
+        .C_in(FullAdder_1_C_out),
         .C_out(FullAdder_2_C_out),
         .Sum(FullAdder_2_Sum));
-  Adder_4bit_FullAdder_0_3 FullAdder_3
-       (.A(FullAdder_1_C_out),
-        .B(util_vector_logic_2_Res),
-        .C_in(a3_1),
+  Adder_4bit_FullAdder_2_3 FullAdder_3
+       (.A(a4_1),
+        .B(b4_1),
+        .C_in(FullAdder_2_C_out),
         .C_out(FullAdder_3_C_out),
         .Sum(FullAdder_3_Sum));
-  Adder_4bit_util_vector_logic_0_0 util_vector_logic_0
-       (.Op1(C_in_1),
-        .Op2(b1_1),
-        .Res(util_vector_logic_0_Res));
-  Adder_4bit_util_vector_logic_0_1 util_vector_logic_1
-       (.Op1(C_in_1),
-        .Op2(b2_1),
-        .Res(util_vector_logic_1_Res));
-  Adder_4bit_util_vector_logic_0_2 util_vector_logic_2
-       (.Op1(C_in_1),
-        .Op2(b3_1),
-        .Res(util_vector_logic_2_Res));
-  Adder_4bit_util_vector_logic_0_3 util_vector_logic_3
-       (.Op1(C_in_1),
-        .Op2(b4_1),
-        .Res(util_vector_logic_3_Res));
 endmodule

@@ -18,6 +18,11 @@
       "xlconstant_0": ""
     },
     "ports": {
+      "C_in": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
       "a1": {
         "direction": "I",
         "left": "0",
@@ -58,16 +63,6 @@
         "left": "0",
         "right": "0"
       },
-      "C_in": {
-        "direction": "I",
-        "left": "0",
-        "right": "0"
-      },
-      "C_out": {
-        "direction": "O",
-        "left": "0",
-        "right": "0"
-      },
       "s1": {
         "direction": "O",
         "left": "0",
@@ -87,15 +82,20 @@
         "direction": "O",
         "left": "0",
         "right": "0"
+      },
+      "C_out": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
       }
     },
     "components": {
       "Adder_4bit_0": {
-        "vlnv": "xilinx.com:user:Adder_4bit:1.0",
+        "vlnv": "xilinx.com:user:Adder_4bit:2.0",
         "xci_name": "bcdAdder_Adder_4bit_0_0"
       },
       "Adder_4bit_1": {
-        "vlnv": "xilinx.com:user:Adder_4bit:1.0",
+        "vlnv": "xilinx.com:user:Adder_4bit:2.0",
         "xci_name": "bcdAdder_Adder_4bit_0_1"
       },
       "util_vector_logic_0": {
@@ -151,32 +151,10 @@
       }
     },
     "nets": {
-      "Adder_4bit_0_s1": {
+      "C_in_1": {
         "ports": [
-          "Adder_4bit_0/s1",
-          "Adder_4bit_1/a1"
-        ]
-      },
-      "Adder_4bit_0_s2": {
-        "ports": [
-          "Adder_4bit_0/s2",
-          "Adder_4bit_1/a2",
-          "util_vector_logic_1/Op2"
-        ]
-      },
-      "Adder_4bit_0_s3": {
-        "ports": [
-          "Adder_4bit_0/s3",
-          "Adder_4bit_1/a3",
-          "util_vector_logic_0/Op2"
-        ]
-      },
-      "Adder_4bit_0_s4": {
-        "ports": [
-          "Adder_4bit_0/s4",
-          "Adder_4bit_1/a4",
-          "util_vector_logic_0/Op1",
-          "util_vector_logic_1/Op1"
+          "C_in",
+          "Adder_4bit_0/C_in"
         ]
       },
       "a1_1": {
@@ -227,10 +205,32 @@
           "Adder_4bit_0/b4"
         ]
       },
-      "C_in_1": {
+      "Adder_4bit_0_s4": {
         "ports": [
-          "C_in",
-          "Adder_4bit_0/C_in"
+          "Adder_4bit_0/s4",
+          "Adder_4bit_1/a4",
+          "util_vector_logic_0/Op1",
+          "util_vector_logic_1/Op1"
+        ]
+      },
+      "Adder_4bit_0_s3": {
+        "ports": [
+          "Adder_4bit_0/s3",
+          "Adder_4bit_1/a3",
+          "util_vector_logic_0/Op2"
+        ]
+      },
+      "Adder_4bit_0_s2": {
+        "ports": [
+          "Adder_4bit_0/s2",
+          "Adder_4bit_1/a2",
+          "util_vector_logic_1/Op2"
+        ]
+      },
+      "Adder_4bit_0_s1": {
+        "ports": [
+          "Adder_4bit_0/s1",
+          "Adder_4bit_1/a1"
         ]
       },
       "util_vector_logic_0_Res": {
@@ -245,37 +245,32 @@
           "util_vector_logic_2/Op2"
         ]
       },
-      "Adder_4bit_0_C_out": {
-        "ports": [
-          "Adder_4bit_0/C_out",
-          "util_vector_logic_3/Op1"
-        ]
-      },
       "util_vector_logic_2_Res": {
         "ports": [
           "util_vector_logic_2/Res",
           "util_vector_logic_3/Op2"
         ]
       },
+      "Adder_4bit_0_C_out": {
+        "ports": [
+          "Adder_4bit_0/C_out",
+          "util_vector_logic_3/Op1"
+        ]
+      },
       "util_vector_logic_3_Res": {
         "ports": [
           "util_vector_logic_3/Res",
+          "Adder_4bit_1/b3",
           "Adder_4bit_1/b2",
-          "Adder_4bit_1/b3"
+          "C_out"
         ]
       },
       "xlconstant_0_dout": {
         "ports": [
           "xlconstant_0/dout",
+          "Adder_4bit_1/C_in",
           "Adder_4bit_1/b4",
-          "Adder_4bit_1/b1",
-          "Adder_4bit_1/C_in"
-        ]
-      },
-      "Adder_4bit_1_C_out": {
-        "ports": [
-          "Adder_4bit_1/C_out",
-          "C_out"
+          "Adder_4bit_1/b1"
         ]
       },
       "Adder_4bit_1_s1": {

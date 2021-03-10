@@ -1,6 +1,6 @@
 Vivado Simulator 2019.1
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/Program-Files/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 6b41b62663904420b8dda355a2502e43 --incr --debug typical --relax --mt 2 -L util_vector_logic_v2_0_1 -L xil_defaultlib -L xlconstant_v1_1_6 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Program-Files/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 6b41b62663904420b8dda355a2502e43 --incr --debug typical --relax --mt 2 -L util_vector_logic_v2_0_1 -L xil_defaultlib -L xlconstant_v1_1_6 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot bcdtest_behav xil_defaultlib.bcdtest xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -16,14 +16,10 @@ Compiling module xil_defaultlib.FullAdder_util_vector_logic_0_3
 Compiling module util_vector_logic_v2_0_1.util_vector_logic_v2_0_1_util_ve...
 Compiling module xil_defaultlib.FullAdder_util_vector_logic_0_4
 Compiling module xil_defaultlib.FullAdder
-Compiling module xil_defaultlib.Adder_4bit_FullAdder_0_0
-Compiling module xil_defaultlib.Adder_4bit_FullAdder_0_1
-Compiling module xil_defaultlib.Adder_4bit_FullAdder_0_2
-Compiling module xil_defaultlib.Adder_4bit_FullAdder_0_3
-Compiling module xil_defaultlib.Adder_4bit_util_vector_logic_0_0
-Compiling module xil_defaultlib.Adder_4bit_util_vector_logic_0_1
-Compiling module xil_defaultlib.Adder_4bit_util_vector_logic_0_2
-Compiling module xil_defaultlib.Adder_4bit_util_vector_logic_0_3
+Compiling module xil_defaultlib.Adder_4bit_FullAdder_0_7
+Compiling module xil_defaultlib.Adder_4bit_FullAdder_0_8
+Compiling module xil_defaultlib.Adder_4bit_FullAdder_1_3
+Compiling module xil_defaultlib.Adder_4bit_FullAdder_2_3
 Compiling module xil_defaultlib.Adder_4bit
 Compiling module xil_defaultlib.bcdAdder_Adder_4bit_0_0
 Compiling module xil_defaultlib.bcdAdder_Adder_4bit_0_1
@@ -34,22 +30,7 @@ Compiling module xil_defaultlib.bcdAdder_util_vector_logic_2_0
 Compiling module xlconstant_v1_1_6.xlconstant_v1_1_6_xlconstant(CON...
 Compiling module xil_defaultlib.bcdAdder_xlconstant_0_0
 Compiling module xil_defaultlib.bcdAdder
-Compiling module xil_defaultlib.mod11_BCDAdder_0_0
-Compiling module xil_defaultlib.mod11_BCDAdder_0_1
-Compiling module xil_defaultlib.mod11_util_vector_logic_0_0
-Compiling module xil_defaultlib.mod11_util_vector_logic_0_1
-Compiling module xil_defaultlib.mod11_util_vector_logic_0_2
-Compiling module xil_defaultlib.mod11_util_vector_logic_0_3
-Compiling module xil_defaultlib.mod11_util_vector_logic_0_4
-Compiling module xil_defaultlib.mod11_util_vector_logic_5_0
-Compiling module xil_defaultlib.mod11_util_vector_logic_5_1
-Compiling module xil_defaultlib.mod11_util_vector_logic_5_2
-Compiling module xil_defaultlib.mod11_util_vector_logic_7_0
-Compiling module util_vector_logic_v2_0_1.util_vector_logic_v2_0_1_util_ve...
-Compiling module xil_defaultlib.mod11_util_vector_logic_8_0
-Compiling module xil_defaultlib.mod11_xlconstant_0_0
-Compiling module xil_defaultlib.mod11
-Compiling module xil_defaultlib.mod11_wrapper
-Compiling module xil_defaultlib.testbench
+Compiling module xil_defaultlib.bcdAdder_wrapper
+Compiling module xil_defaultlib.bcdtest
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot testbench_behav
+Built simulation snapshot bcdtest_behav
