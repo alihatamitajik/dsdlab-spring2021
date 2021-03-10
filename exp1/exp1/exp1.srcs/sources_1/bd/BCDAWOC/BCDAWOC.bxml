@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="BCDAWOC" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1615354982"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1615354982"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1615354983"/>
-    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1615354983"/>
+    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1615356113"/>
+    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1615356113"/>
+    <Generation Name="SIMULATION" State="STALE" Timestamp="1615356114"/>
+    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1615356114"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\BCDAWOC_binadd4b_0_0\BCDAWOC_binadd4b_0_0.xci" Type="IP">
         <Instance HierarchyPath="binadd4b_0"/>

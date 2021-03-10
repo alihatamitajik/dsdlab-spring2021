@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="mod_3" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1615354484"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1615354484"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1615354510"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1615354510"/>
+    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1615355548"/>
+    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1615355548"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1615355553"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1615355553"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="synth\mod_3.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>

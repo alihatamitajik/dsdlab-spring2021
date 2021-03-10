@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Mar 10 09:05:10 2021" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Mar 10 09:22:32 2021" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="virtex7" DEVICE="7vx485t" NAME="mod_3" PACKAGE="ffg1157" SPEEDGRADE="-1"/>
 
@@ -603,10 +603,10 @@
     <MODULE COREREVISION="1" FULLNAME="/util_vector_logic_21" HWVERSION="2.0" INSTANCE="util_vector_logic_21" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="C_OPERATION" VALUE="and"/>
+        <PARAMETER NAME="C_OPERATION" VALUE="or"/>
         <PARAMETER NAME="C_SIZE" VALUE="1"/>
         <PARAMETER NAME="Component_Name" VALUE="mod_3_util_vector_logic_14_0"/>
-        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_andgate.png"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_orgate.png"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>

@@ -18,10 +18,6 @@ module mod3_tb;
   wire [0:0]D1;
   wire [0:0]D2;
   wire [0:0]D3;
-  wire [0:0]S0;
-  wire [0:0]S1;
-  wire [0:0]S2;
-  wire [0:0]S3;
   wire [0:0]Res;
 
   mod_3_wrapper mod_3_w
@@ -44,11 +40,7 @@ module mod3_tb;
         .Res(Res));
     
     reg [0:3] a, b, c, d;
-    wire [0:3] s;
-    assign s[0] = S3;
-    assign s[1] = S2;
-    assign s[2] = S1;
-    assign s[3] = S0;
+    reg res;
     
     assign A0 = a[3];
     assign A1 = a[2];

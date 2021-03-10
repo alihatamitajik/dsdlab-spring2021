@@ -351,6 +351,9 @@
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
         "xci_name": "mod_3_util_vector_logic_14_0",
         "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
           "C_SIZE": {
             "value": "1"
           }
