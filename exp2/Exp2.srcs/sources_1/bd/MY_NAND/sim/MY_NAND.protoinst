@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"MY_NAND": {
+			"proto_instances": {
+			}
+		}
+	}
+}

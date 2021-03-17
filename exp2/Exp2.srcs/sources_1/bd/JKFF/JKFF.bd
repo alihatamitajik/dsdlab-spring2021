@@ -1,0 +1,179 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x15E05B7B15E05B7B",
+      "device": "xc7vx485tffg1157-1",
+      "name": "JKFF",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "MY_NAND_0": "",
+      "MY_NAND_1": "",
+      "MY_NAND_2": "",
+      "MY_NAND_3": "",
+      "MY_NAND_4": "",
+      "MY_NAND_5": "",
+      "NAND3_0": "",
+      "NAND3_1": "",
+      "util_vector_logic_0": ""
+    },
+    "ports": {
+      "CLK": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "J": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "K": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "Q": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "Qn": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      }
+    },
+    "components": {
+      "MY_NAND_0": {
+        "vlnv": "Group5:user:MY_NAND:1.0",
+        "xci_name": "JKFF_MY_NAND_0_1"
+      },
+      "MY_NAND_1": {
+        "vlnv": "Group5:user:MY_NAND:1.0",
+        "xci_name": "JKFF_MY_NAND_1_1"
+      },
+      "MY_NAND_2": {
+        "vlnv": "Group5:user:MY_NAND:1.0",
+        "xci_name": "JKFF_MY_NAND_2_1"
+      },
+      "MY_NAND_3": {
+        "vlnv": "Group5:user:MY_NAND:1.0",
+        "xci_name": "JKFF_MY_NAND_3_1"
+      },
+      "MY_NAND_4": {
+        "vlnv": "Group5:user:MY_NAND:1.0",
+        "xci_name": "JKFF_MY_NAND_4_1"
+      },
+      "MY_NAND_5": {
+        "vlnv": "Group5:user:MY_NAND:1.0",
+        "xci_name": "JKFF_MY_NAND_5_1"
+      },
+      "NAND3_0": {
+        "vlnv": "Group5:user:NAND3:1.0",
+        "xci_name": "JKFF_NAND3_0_1"
+      },
+      "NAND3_1": {
+        "vlnv": "Group5:user:NAND3:1.0",
+        "xci_name": "JKFF_NAND3_1_1"
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "JKFF_util_vector_logic_0_11",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      }
+    },
+    "nets": {
+      "CLK_1": {
+        "ports": [
+          "CLK",
+          "util_vector_logic_0/Op1",
+          "NAND3_0/Op3",
+          "NAND3_1/Op1"
+        ]
+      },
+      "J_1": {
+        "ports": [
+          "J",
+          "NAND3_0/Op2"
+        ]
+      },
+      "K_1": {
+        "ports": [
+          "K",
+          "NAND3_1/Op2"
+        ]
+      },
+      "MY_NAND_0_Res": {
+        "ports": [
+          "MY_NAND_0/Res",
+          "MY_NAND_2/Op1",
+          "MY_NAND_1/Op1"
+        ]
+      },
+      "MY_NAND_1_Res": {
+        "ports": [
+          "MY_NAND_1/Res",
+          "MY_NAND_3/Op2",
+          "MY_NAND_0/Op2"
+        ]
+      },
+      "MY_NAND_2_Res": {
+        "ports": [
+          "MY_NAND_2/Res",
+          "MY_NAND_4/Op1"
+        ]
+      },
+      "MY_NAND_3_Res": {
+        "ports": [
+          "MY_NAND_3/Res",
+          "MY_NAND_5/Op2"
+        ]
+      },
+      "MY_NAND_4_Res": {
+        "ports": [
+          "MY_NAND_4/Res",
+          "MY_NAND_5/Op1",
+          "Q",
+          "NAND3_1/Op3"
+        ]
+      },
+      "MY_NAND_5_Res": {
+        "ports": [
+          "MY_NAND_5/Res",
+          "MY_NAND_4/Op2",
+          "Qn",
+          "NAND3_0/Op1"
+        ]
+      },
+      "NAND3_0_Res": {
+        "ports": [
+          "NAND3_0/Res",
+          "MY_NAND_0/Op1"
+        ]
+      },
+      "NAND3_1_Res": {
+        "ports": [
+          "NAND3_1/Res",
+          "MY_NAND_1/Op2"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "MY_NAND_3/Op1",
+          "MY_NAND_2/Op2"
+        ]
+      }
+    }
+  }
+}

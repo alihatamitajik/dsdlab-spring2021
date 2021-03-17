@@ -1,0 +1,109 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xF9241F59F9241F59",
+      "device": "xc7vx485tffg1157-1",
+      "name": "NAND3",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "util_vector_logic_0": "",
+      "util_vector_logic_1": "",
+      "util_vector_logic_2": ""
+    },
+    "ports": {
+      "Op1": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "Op2": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "Op3": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "Res": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      }
+    },
+    "components": {
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "NAND3_util_vector_logic_0_0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "NAND3_util_vector_logic_0_1",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_2": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "NAND3_util_vector_logic_1_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      }
+    },
+    "nets": {
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "util_vector_logic_1/Op1"
+        ]
+      },
+      "Op1_1": {
+        "ports": [
+          "Op1",
+          "util_vector_logic_0/Op1"
+        ]
+      },
+      "Op2_1": {
+        "ports": [
+          "Op2",
+          "util_vector_logic_0/Op2"
+        ]
+      },
+      "Op3_1": {
+        "ports": [
+          "Op3",
+          "util_vector_logic_1/Op2"
+        ]
+      },
+      "util_vector_logic_1_Res": {
+        "ports": [
+          "util_vector_logic_1/Res",
+          "util_vector_logic_2/Op1"
+        ]
+      },
+      "util_vector_logic_2_Res": {
+        "ports": [
+          "util_vector_logic_2/Res",
+          "Res"
+        ]
+      }
+    }
+  }
+}

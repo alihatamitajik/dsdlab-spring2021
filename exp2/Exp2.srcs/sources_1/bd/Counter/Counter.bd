@@ -1,0 +1,322 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xACD00860ACD00860",
+      "device": "xc7vx485tffg1157-1",
+      "name": "Counter",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "util_vector_logic_1": "",
+      "JKFF_0": "",
+      "util_vector_logic_2": "",
+      "util_vector_logic_3": "",
+      "util_vector_logic_4": "",
+      "JKFF_1": "",
+      "util_vector_logic_5": "",
+      "util_vector_logic_6": "",
+      "util_vector_logic_7": "",
+      "JKFF_2": "",
+      "util_vector_logic_8": "",
+      "util_vector_logic_9": "",
+      "util_vector_logic_10": "",
+      "JKFF_3": ""
+    },
+    "ports": {
+      "A3": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "A2": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "A1": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "A0": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "U": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "Enable": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "CLK": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      }
+    },
+    "components": {
+      "util_vector_logic_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "Counter_util_vector_logic_0_2",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "JKFF_0": {
+        "vlnv": "Group5:user:JKFF:1.0",
+        "xci_name": "Counter_JKFF_0_0"
+      },
+      "util_vector_logic_2": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "Counter_util_vector_logic_1_2",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_3": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "Counter_util_vector_logic_1_3",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_4": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "Counter_util_vector_logic_2_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "JKFF_1": {
+        "vlnv": "Group5:user:JKFF:1.0",
+        "xci_name": "Counter_JKFF_0_4"
+      },
+      "util_vector_logic_5": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "Counter_util_vector_logic_1_4",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_6": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "Counter_util_vector_logic_2_1",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_7": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "Counter_util_vector_logic_3_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "JKFF_2": {
+        "vlnv": "Group5:user:JKFF:1.0",
+        "xci_name": "Counter_JKFF_1_0"
+      },
+      "util_vector_logic_8": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "Counter_util_vector_logic_5_0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_9": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "Counter_util_vector_logic_6_0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_10": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "Counter_util_vector_logic_7_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "or"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "JKFF_3": {
+        "vlnv": "Group5:user:JKFF:1.0",
+        "xci_name": "Counter_JKFF_2_0"
+      }
+    },
+    "nets": {
+      "JKFF_0_Q": {
+        "ports": [
+          "JKFF_0/Q",
+          "util_vector_logic_1/Op2",
+          "A0"
+        ]
+      },
+      "JKFF_0_Qn": {
+        "ports": [
+          "JKFF_0/Qn",
+          "util_vector_logic_2/Op1"
+        ]
+      },
+      "U_1": {
+        "ports": [
+          "U",
+          "util_vector_logic_1/Op1",
+          "util_vector_logic_4/Op1"
+        ]
+      },
+      "util_vector_logic_1_Res": {
+        "ports": [
+          "util_vector_logic_1/Res",
+          "util_vector_logic_3/Op1",
+          "util_vector_logic_5/Op1"
+        ]
+      },
+      "util_vector_logic_2_Res": {
+        "ports": [
+          "util_vector_logic_2/Res",
+          "util_vector_logic_3/Op2",
+          "util_vector_logic_6/Op2"
+        ]
+      },
+      "CLK_1": {
+        "ports": [
+          "CLK",
+          "JKFF_0/CLK",
+          "JKFF_1/CLK",
+          "JKFF_2/CLK",
+          "JKFF_3/CLK"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "Enable",
+          "JKFF_0/J",
+          "JKFF_0/K"
+        ]
+      },
+      "util_vector_logic_4_Res": {
+        "ports": [
+          "util_vector_logic_4/Res",
+          "util_vector_logic_2/Op2"
+        ]
+      },
+      "JKFF_0_Q1": {
+        "ports": [
+          "JKFF_1/Q",
+          "util_vector_logic_5/Op2",
+          "A1"
+        ]
+      },
+      "JKFF_0_Qn1": {
+        "ports": [
+          "JKFF_1/Qn",
+          "util_vector_logic_6/Op1"
+        ]
+      },
+      "util_vector_logic_1_Res1": {
+        "ports": [
+          "util_vector_logic_5/Res",
+          "util_vector_logic_7/Op1",
+          "util_vector_logic_8/Op1"
+        ]
+      },
+      "util_vector_logic_2_Res1": {
+        "ports": [
+          "util_vector_logic_6/Res",
+          "util_vector_logic_7/Op2",
+          "util_vector_logic_9/Op2"
+        ]
+      },
+      "xlconstant_0_dout1": {
+        "ports": [
+          "util_vector_logic_3/Res",
+          "JKFF_1/J",
+          "JKFF_1/K"
+        ]
+      },
+      "JKFF_0_Q2": {
+        "ports": [
+          "JKFF_2/Q",
+          "util_vector_logic_8/Op2",
+          "A2"
+        ]
+      },
+      "JKFF_0_Qn2": {
+        "ports": [
+          "JKFF_2/Qn",
+          "util_vector_logic_9/Op1"
+        ]
+      },
+      "util_vector_logic_1_Res3": {
+        "ports": [
+          "util_vector_logic_8/Res",
+          "util_vector_logic_10/Op1"
+        ]
+      },
+      "util_vector_logic_2_Res3": {
+        "ports": [
+          "util_vector_logic_9/Res",
+          "util_vector_logic_10/Op2"
+        ]
+      },
+      "xlconstant_0_dout2": {
+        "ports": [
+          "util_vector_logic_7/Res",
+          "JKFF_2/J",
+          "JKFF_2/K"
+        ]
+      },
+      "xlconstant_0_dout3": {
+        "ports": [
+          "util_vector_logic_10/Res",
+          "JKFF_3/J",
+          "JKFF_3/K"
+        ]
+      },
+      "JKFF_3_Q": {
+        "ports": [
+          "JKFF_3/Q",
+          "A3"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Mar 17 03:38:04 2021" VIVADOVERSION="2019.1">
+
+  <SYSTEMINFO ARCH="virtex7" DEVICE="7vx485t" NAME="JKFF" PACKAGE="ffg1157" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" LEFT="0" NAME="CLK" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_CLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op1"/>
+        <CONNECTION INSTANCE="NAND3_0" PORT="Op3"/>
+        <CONNECTION INSTANCE="NAND3_1" PORT="Op1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="J" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_J">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="NAND3_0" PORT="Op2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="K" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_K">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="NAND3_1" PORT="Op2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="Q" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_4_Res">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="MY_NAND_4" PORT="Res"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="Qn" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_5_Res">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="MY_NAND_5" PORT="Res"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="3" FULLNAME="/MY_NAND_0" HWVERSION="1.0" INSTANCE="MY_NAND_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="MY_NAND" VLNV="Group5:user:MY_NAND:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="JKFF_MY_NAND_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="NAND3_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="NAND3_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_1_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_1" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_2" PORT="Op1"/>
+            <CONNECTION INSTANCE="MY_NAND_1" PORT="Op1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="3" FULLNAME="/MY_NAND_1" HWVERSION="1.0" INSTANCE="MY_NAND_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="MY_NAND" VLNV="Group5:user:MY_NAND:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="JKFF_MY_NAND_1_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="NAND3_1_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="NAND3_1" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_1_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_3" PORT="Op2"/>
+            <CONNECTION INSTANCE="MY_NAND_0" PORT="Op2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="3" FULLNAME="/MY_NAND_2" HWVERSION="1.0" INSTANCE="MY_NAND_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="MY_NAND" VLNV="Group5:user:MY_NAND:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="JKFF_MY_NAND_2_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_2_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_4" PORT="Op1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="3" FULLNAME="/MY_NAND_3" HWVERSION="1.0" INSTANCE="MY_NAND_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="MY_NAND" VLNV="Group5:user:MY_NAND:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="JKFF_MY_NAND_3_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_1_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_1" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_3_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_5" PORT="Op2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="3" FULLNAME="/MY_NAND_4" HWVERSION="1.0" INSTANCE="MY_NAND_4" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="MY_NAND" VLNV="Group5:user:MY_NAND:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="JKFF_MY_NAND_4_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_2_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_2" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_5_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_5" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_4_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_5" PORT="Op1"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="Q"/>
+            <CONNECTION INSTANCE="NAND3_1" PORT="Op3"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="3" FULLNAME="/MY_NAND_5" HWVERSION="1.0" INSTANCE="MY_NAND_5" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="MY_NAND" VLNV="Group5:user:MY_NAND:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="JKFF_MY_NAND_5_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_4_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_4" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_3_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_3" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_5_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_4" PORT="Op2"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="Qn"/>
+            <CONNECTION INSTANCE="NAND3_0" PORT="Op1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/NAND3_0" HWVERSION="1.0" INSTANCE="NAND3_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="NAND3" VLNV="Group5:user:NAND3:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="JKFF_NAND3_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_5_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_5" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_J">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="J"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="NAND3_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_0" PORT="Op1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/NAND3_1" HWVERSION="1.0" INSTANCE="NAND3_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="NAND3" VLNV="Group5:user:NAND3:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="JKFF_NAND3_1_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op2" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_K">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="K"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="Op3" RIGHT="0" SIGIS="undef" SIGNAME="MY_NAND_4_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_4" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="NAND3_1_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_1" PORT="Op2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/util_vector_logic_0" HWVERSION="2.0" INSTANCE="util_vector_logic_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_OPERATION" VALUE="not"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="JKFF_util_vector_logic_0_11"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_notgate.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="MY_NAND_3" PORT="Op1"/>
+            <CONNECTION INSTANCE="MY_NAND_2" PORT="Op2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="mod3_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="mod3_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="210800001fs"></ZoomEndTime>
+      <Cursor1Time time="62400000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="134"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="23" />
+   <wvobject fp_name="/mod3_tb/A0" type="array">
+      <obj_property name="ElementShortName">A0[0:0]</obj_property>
+      <obj_property name="ObjectShortName">A0[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/A1" type="array">
+      <obj_property name="ElementShortName">A1[0:0]</obj_property>
+      <obj_property name="ObjectShortName">A1[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/A2" type="array">
+      <obj_property name="ElementShortName">A2[0:0]</obj_property>
+      <obj_property name="ObjectShortName">A2[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/A3" type="array">
+      <obj_property name="ElementShortName">A3[0:0]</obj_property>
+      <obj_property name="ObjectShortName">A3[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/B0" type="array">
+      <obj_property name="ElementShortName">B0[0:0]</obj_property>
+      <obj_property name="ObjectShortName">B0[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/B1" type="array">
+      <obj_property name="ElementShortName">B1[0:0]</obj_property>
+      <obj_property name="ObjectShortName">B1[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/B2" type="array">
+      <obj_property name="ElementShortName">B2[0:0]</obj_property>
+      <obj_property name="ObjectShortName">B2[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/B3" type="array">
+      <obj_property name="ElementShortName">B3[0:0]</obj_property>
+      <obj_property name="ObjectShortName">B3[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/C0" type="array">
+      <obj_property name="ElementShortName">C0[0:0]</obj_property>
+      <obj_property name="ObjectShortName">C0[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/C1" type="array">
+      <obj_property name="ElementShortName">C1[0:0]</obj_property>
+      <obj_property name="ObjectShortName">C1[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/C2" type="array">
+      <obj_property name="ElementShortName">C2[0:0]</obj_property>
+      <obj_property name="ObjectShortName">C2[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/C3" type="array">
+      <obj_property name="ElementShortName">C3[0:0]</obj_property>
+      <obj_property name="ObjectShortName">C3[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/D0" type="array">
+      <obj_property name="ElementShortName">D0[0:0]</obj_property>
+      <obj_property name="ObjectShortName">D0[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/D1" type="array">
+      <obj_property name="ElementShortName">D1[0:0]</obj_property>
+      <obj_property name="ObjectShortName">D1[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/D2" type="array">
+      <obj_property name="ElementShortName">D2[0:0]</obj_property>
+      <obj_property name="ObjectShortName">D2[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/D3" type="array">
+      <obj_property name="ElementShortName">D3[0:0]</obj_property>
+      <obj_property name="ObjectShortName">D3[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/Res" type="array">
+      <obj_property name="ElementShortName">Res[0:0]</obj_property>
+      <obj_property name="ObjectShortName">Res[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="vbus131" type="vbus">
+      <obj_property name="label">Res[0:0]</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/mod3_tb/res" type="logic">
+         <obj_property name="ElementShortName">res</obj_property>
+         <obj_property name="ObjectShortName">res</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/a" type="array">
+      <obj_property name="ElementShortName">a[0:3]</obj_property>
+      <obj_property name="ObjectShortName">a[0:3]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/b" type="array">
+      <obj_property name="ElementShortName">b[0:3]</obj_property>
+      <obj_property name="ObjectShortName">b[0:3]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/c" type="array">
+      <obj_property name="ElementShortName">c[0:3]</obj_property>
+      <obj_property name="ObjectShortName">c[0:3]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/d" type="array">
+      <obj_property name="ElementShortName">d[0:3]</obj_property>
+      <obj_property name="ObjectShortName">d[0:3]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mod3_tb/period" type="array">
+      <obj_property name="ElementShortName">period[31:0]</obj_property>
+      <obj_property name="ObjectShortName">period[31:0]</obj_property>
+   </wvobject>
+</wave_config>
