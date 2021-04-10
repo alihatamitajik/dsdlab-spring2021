@@ -28,12 +28,12 @@ module stack(
         out <= 0;
     end
     
-    always @ (posedge clk) begin
+    always @ (posedge clk && ~rstN) begin
         if (pop && push) begin
             if (empty) begin // If Pop and Push together but pop can't be done
                 stack[emptyPos] = data_in;
                 emptyPos = emptyPos + 1;
-            end else begin // push and pop together
+            end else if () begin // push and pop together
                 out = stack[emptyPos - 1];
                 stack[emptyPos - 1] = data_in;
             end
