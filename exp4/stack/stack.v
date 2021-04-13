@@ -22,14 +22,11 @@ module stack(
     assign empty = (emptyPos == 0);
     assign data_out = out;
     
-    // asynchronized reset stack signal
-    always @ (rstN) begin
-        emptyPos <= 0;
-        out <= 0;
-    end
-    
-    always @ (posedge clk && ~rstN) begin
-        if (pop && push) begin
+    always @ (posedge clk or posedge rstN) begin
+       if (rstN) begin
+            emptyPos <= 0;
+            out <= 0;
+       end else if (pop && push) begin
             if (empty) begin // If Pop and Push together but pop can't be done
                 stack[emptyPos] = data_in;
                 emptyPos = emptyPos + 1;
