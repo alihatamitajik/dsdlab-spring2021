@@ -22,8 +22,8 @@ module stack(
     assign empty = (emptyPos == 0);
     assign data_out = out;
     
-    always @ (posedge clk or posedge rstN) begin
-       if (rstN) begin
+    always @ (posedge clk or negedge rstN) begin
+       if (~rstN) begin
             emptyPos <= 0;
             out <= 0;
        end else if (pop && push) begin
