@@ -28,18 +28,18 @@ module stack(
             out <= 0;
        end else if (pop && push) begin
             if (empty) begin // If Pop and Push together but pop can't be done
-                stack[emptyPos] = data_in;
-                emptyPos = emptyPos + 1;
+                stack[emptyPos] <= data_in;
+                emptyPos <= emptyPos + 1;
             end else begin // push and pop together
-                out = stack[emptyPos - 1];
-                stack[emptyPos - 1] = data_in;
+                out <= stack[emptyPos - 1];
+                stack[emptyPos - 1] <= data_in;
             end
         end else if (pop && ~empty) begin // if only pop and pop is valid
-            emptyPos = emptyPos - 1;
-            out = stack[emptyPos];
+            out <= stack[emptyPos - 1];
+            emptyPos <= emptyPos - 1;
         end else if (push && ~full) begin // if only push and push is valid
-            stack[emptyPos] = data_in;
-            emptyPos = emptyPos + 1;      
+            stack[emptyPos] <= data_in;
+            emptyPos <= emptyPos + 1;      
         end
     end
 endmodule
