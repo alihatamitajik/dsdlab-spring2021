@@ -13,8 +13,8 @@ module four_bit_comparator_tb;
 
     reg [3:0] i;
     initial begin
-        $dumpfile("4_comparator_test.vcd");
-        $dumpvars(0,four_bit_comparator_tb);
+        // $dumpfile("4_comparator_test.vcd");
+        // $dumpvars(0,four_bit_comparator_tb);
         for(i = 0; i < 15; i = i + 1) begin
             A = $random;
             B = $random;

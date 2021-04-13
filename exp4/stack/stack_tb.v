@@ -2,7 +2,7 @@
 // Stack Test Bench
 
 module stack_tb();
-    reg clk = 0, pop = 0, push = 0, rstN = 0;
+    reg clk = 0, pop = 0, push = 0, rstN = 1;
     reg [3:0]data_in = 0;
     wire [3:0] data_out;
     wire full, empty;
@@ -18,6 +18,8 @@ module stack_tb();
     end
     integer i = 0;
     initial begin 
+        $dumpfile("stack_test.vcd");
+        $dumpvars(0,stack_tb);
         #10;
         // push 5 data every clock
         push = 1;
@@ -37,7 +39,7 @@ module stack_tb();
         push = 0; 
         pop =1; #30;
         // reset the stack
-        pop =0; rstN = 1; #5 rstN = 0; #5;
+        pop =0; rstN = 0; #5 rstN = 1; #5;
         // 2 invalid pop
         pop = 1; #20;
         // push a new data with pop on and pop it
