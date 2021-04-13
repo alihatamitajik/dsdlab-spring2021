@@ -23,7 +23,7 @@ module stack(
     assign data_out = out;
     
     always @ (posedge clk or negedge rstN) begin
-       if (!rstN) begin
+       if (~rstN) begin
             emptyPos <= 0;
             out <= 0;
        end else if (pop && push) begin
