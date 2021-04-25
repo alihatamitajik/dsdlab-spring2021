@@ -22,15 +22,13 @@ module power_control (
         end
         else begin
             if (S1) begin
-                if (conditions) begin
-                    if (T < 15) begin
-                        S1 <= 0;
-                        S3 <= 1;
-                    end
-                    if (T > 35) begin
-                        S1 <= 0;
-                        S2 <= 1;
-                    end
+                if (T < 15) begin
+                    S1 <= 0;
+                    S3 <= 1;
+                end
+                if (T > 35) begin
+                    S1 <= 0;
+                    S2 <= 1;
                 end
             end
             else if (S2) begin

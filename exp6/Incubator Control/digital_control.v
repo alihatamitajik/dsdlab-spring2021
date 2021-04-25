@@ -9,7 +9,7 @@ module digital_control (
 );
     input [7:0] T;
     input clk, rstN;
-    output Heater, Cooler;
+    output Heater, Cooler, OUT;
     output [3:0] CRS;
 
     power_control pcu(.T(T), .Heater(Heater), .Cooler(Cooler), .clk(clk), .rstN(rstN));
