@@ -5,7 +5,7 @@ module power_control (
     clk,
     rstN
 );
-    input [7:0] T;
+    input signed [7:0] T;
     input clk, rstN;
     output Heater, Cooler;
 

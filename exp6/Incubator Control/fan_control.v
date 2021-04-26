@@ -5,7 +5,7 @@ module fan_control (
     OUT,
     clk
 );
-    input [7:0] T;
+    input signed [7:0] T;
     input Cooler, clk;
     output reg [3:0] CRS;
     output reg OUT;
@@ -14,13 +14,13 @@ module fan_control (
 
     always @(*) begin
         if (S1) begin
-            CRS = 8;
+            CRS = 4;
         end
         else if (S2) begin
             CRS = 6;
         end
         else if (S3) begin
-            CRS = 4;
+            CRS = 8;
         end
         else if (OUT) begin
             CRS = 0;
