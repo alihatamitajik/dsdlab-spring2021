@@ -27,7 +27,7 @@ module fan_control (
         end
     end
 
-    always @(posedge clk or negedge Cooler) begin
+    always @(posedge clk or negedge Cooler or posedge Cooler) begin
         if (~Cooler) begin
             S1 <= 0;
             S2 <= 0;

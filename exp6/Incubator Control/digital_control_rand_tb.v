@@ -11,18 +11,18 @@ module digital_control_rand_tb ();
         forever #10 clk <= ~clk;
     end
 
-    reg [6:0] i;
-    integer seed;
+    integer i = -10;
     initial begin
-        $dumpfile("dcu_rand.vcd");
-        $dumpvars(0, digital_control_rand_tb);
-        seed = $time;
+        T = -10;
         rstN <= 0;
         #20 rstN <= 1;
-        for (i = 0; ~i[6]; i = i + 1) begin
-            T = $random(seed) % 71 - 11;
-            // rstN = $random(seed);
-            #100;
+        for (i = -10; i <= 60; i = i + 1) begin
+            T = i;
+            #20;
+        end
+        for (i = 59; i >= -10; i = i - 1) begin
+            T = i;
+            #20;
         end
         $finish;
     end
