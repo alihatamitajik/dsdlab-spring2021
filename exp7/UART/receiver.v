@@ -36,7 +36,7 @@ module receiver(
                 if(counter < 9) begin // 0 through 8 -> start, parity, data[6:0]
                     data <= {data[6:0], rx};
                 end
-                if (counter == 10) begin // stop
+                else begin // stop
                     state <= 0;
                 end
                 counter <= counter + 1;
