@@ -1,7 +1,7 @@
 
 module transmiter (tx, clk, tx_en, [7:0] data_in, start, busy, resetN);
     output reg tx, busy;
-    input wire start, resetN, clk, rx_en, ;
+    input wire start, resetN, clk, tx_en, ;
     input [6:0] data_in;
 
     reg [7:0] data_send;
@@ -12,7 +12,7 @@ module transmiter (tx, clk, tx_en, [7:0] data_in, start, busy, resetN);
     assign busy = ~(current_state == 2b'00);       // if we are not relaxing, we are busy =)
 
     always @ (posedge clk or negedge resetN or posedge start) begin
-        if (~resetN) begin                         // if module was reseted
+        if (~resetN) begin                         // if module was reset
             current_state <= 2b'00;                // go to Relax State
             isStarted <= 1b'0;                     // make not started
             tx <= 1b'1;                            // make tx 1
