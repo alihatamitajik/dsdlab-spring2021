@@ -27,7 +27,7 @@ module transmiter (tx, clk, tx_en, [7:0] data_in, start, busy, resetN);
             end
         end else if (current_state == 2b'10) begin // if in send data state
             if (tx_en) begin                       // if we are on rate
-                tx <= data_send[pos];              // make tx the data in send position
+                tx <= data_send[7-pos];            // make tx the data in send position
                 pos <= pos + 1;                    // add to position
                 if (pos == 3b'111)begin            // if we reach position 7
                     current_state <= 2b'11         // go to next state - send stop bit
