@@ -9,6 +9,8 @@ module transmiter (tx, clk, tx_en, [7:0] data_in, start, busy, resetN);
     reg [2:0] pos = 0;
     reg isStarted = 0;
 
+    assign busy = ~(current_state == 2b'00);       // if we are not relaxing, we are busy =)
+
     always @ (posedge clk or negedge resetN or posedge start) begin
         if (~resetN) begin                         // if module was reseted
             current_state <= 2b'00;                // go to Relax State
