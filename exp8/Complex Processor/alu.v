@@ -5,7 +5,7 @@ module alu (
     sub,    // is sub requested
     result  // 8 bit result
 );
-    input wire signed [3:0] first, second;
+    input wire signed [7:0] first, second;
     input wire mul, sub;
     output wire signed [7:0] result;
 
