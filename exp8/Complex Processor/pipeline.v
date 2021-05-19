@@ -95,7 +95,7 @@ always @(posedge clk) begin
             end 
 
             // if EndInstruction Reached
-            else if (ir[15:0] == 2'b11) begin
+            else if (ir[15:14] == 2'b11) begin
                 current_state <= ENDS;          // next state is ENDState
             end
 
@@ -125,8 +125,8 @@ always @(posedge clk) begin
             address <= pc;              // prepare address to fetch the next instruction
             pc <= pc + 1;               // add to program counter
 
-            first_alu <= first_re;      // set the first parameter of the ALU to real part of first number
-            second_alu <= second_re;    // ... of second number
+            first_alu <= data_in[15:8];      // set the first parameter of the ALU to real part of first number
+            second_alu <= data_in[15:8];    // ... of second number
             
             mul <= opcode[1];           // set the mode of ALU by opcode
             sub <= opcode[0];
@@ -170,7 +170,7 @@ always @(posedge clk) begin
             end 
 
             // if EndInstruction Reached
-            else if (ir[15:0] == 2'b11) begin
+            else if (ir[15:14] == 2'b11) begin
                 current_state <= ENDS;          // next state is ENDState
             end
 
@@ -213,7 +213,7 @@ always @(posedge clk) begin
             ir <= data_in;              // fetch the next instruction
             
             // address of first number
-            address <= {data_in[13],data_in[12:9]}
+            address <= {data_in[13],data_in[12:9]};
             
             current_state <= MMUL2;
         end
@@ -225,7 +225,7 @@ always @(posedge clk) begin
             second_alu <= second_im;
 
             pre_num[0] <= data_in;      // store the first number of next instruction
-            address <= ir[13],ir[8:5];  // prepare for reading next second number
+            address <= {ir[13],ir[8:5]};  // prepare for reading next second number
 
             current_state <= MMUL3;
         end
@@ -237,7 +237,7 @@ always @(posedge clk) begin
             second_alu <= second_re;    
 
             pre_num[1] <= data_in;      // store the second number of next instruction
-            address <= result_address   // store the result address of the current insreution that
+            address <= result_address;   // store the result address of the current insreution that
                                         // we can decode the next instruction
             
             opcode <= ir[15:14];        // decoding next instruciton
@@ -301,7 +301,7 @@ always @(posedge clk) begin
             end 
 
             // if EndInstruction Reached
-            else if (ir[15:0] == 2'b11) begin
+            else if (ir[15:14] == 2'b11) begin
                 current_state <= ENDS;          // next state is ENDState
             end
 
@@ -313,7 +313,12 @@ always @(posedge clk) begin
                 sub <= 1'b0;
             end
         end
-        default: 
+        default: begin
+            pc <= 5'b00001;
+            readwriteN <= 1;
+            address <= 5'b00000;
+            current_state <= FETCH1;
+        end
     endcase
 end
 

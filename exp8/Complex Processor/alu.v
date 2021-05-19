@@ -26,5 +26,5 @@ module alu (
     );
 
     assign result = mul? mul_result : addsub_result;
-)
+
 endmodule

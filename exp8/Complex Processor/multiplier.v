@@ -3,8 +3,8 @@ module multiplier (
     second, // second number
     result  // result number => first * second
 );
-    input signed wire [7:0]first, second;
-    output signed wire [7:0] result;
+    input wire signed [7:0]first, second;
+    output wire signed [7:0] result;
 
     assign result = first * second;
 endmodule

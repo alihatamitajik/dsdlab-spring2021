@@ -5,8 +5,8 @@ module addsub (
     result
 );
     input wire mode;
-    input signed wire[7:0] first, second;
-    output signed wire [7:0] result;
+    input wire signed [7:0] first, second;
+    output wire signed [7:0] result;
 
     assign result = mode? first - second: first + second;
 endmodule
