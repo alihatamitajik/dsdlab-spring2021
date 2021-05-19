@@ -2,7 +2,7 @@ module processor (
     clk,            // incomming clock
     data_in,        // data read from Memory
     data_out,       // data to be written in Memory
-    readwriteN,     // if 1 data will be writen else data will be read
+    readwriteN,     // if 0 data will be writen else data will be read
     address         // the access address of memory
 );
 
@@ -19,11 +19,11 @@ pipeline pipe(
     .clk(clk),            // incomming clock
     .data_in(data_in),        // data read from Memory
     .data_out(data_out),       // data to be written in Memory
-    .readwriteN(readwriteN),     // if 1 data will be writen else data will be read
+    .readwriteN(readwriteN),     // if 0 data will be writen else data will be read
     .address(address),        // the access address of memory
     .result_of_alu(result),  // attributes for ALU
     .first_alu(first),
-    .second_alu(first),
+    .second_alu(second),
     .mul(mul),
     .sub(sub)
 );

@@ -1,8 +1,8 @@
 module pipeline (
-    clk,            // incomming clock
+    clk,            // incoming clock
     data_in,        // data read from Memory
     data_out,       // data to be written in Memory
-    readwriteN,     // if 1 data will be writen else data will be read
+    readwriteN,     // if 0 data will be writen else data will be read
     address,        // the access address of memory
     result_of_alu,  // attributes for ALU
     first_alu,
