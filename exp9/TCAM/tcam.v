@@ -6,11 +6,11 @@ module tcam (
     input [15:0] dontcare_mask,
     input [3:0] write_address,
     input clk,
-    input resetN
+    input resetN,
 );
     reg [15:0] mem [0:15];
     reg [15:0] mem_dontcare_masks [0:15];
-    reg result [15:0];
+    reg  [15:0] result;
 
     pr_encoder_16_to_4 encoder (result, found_address, hit);
 
