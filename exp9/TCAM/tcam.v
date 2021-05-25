@@ -10,14 +10,14 @@ module tcam (
 );
     reg [15:0] mem [0:15];
     reg [15:0] mem_dontcare_masks [0:15];
+    reg result [15:0];
+
+    16_4_pr_encoder encoder (result, found_address, hit);
+
     integer i;
-    always @(*) begin
-        hit = 0;
+    always @(posedge clk) begin
         for (i = 0; i < 16; i = i + 1) begin
-            if ((mem[i] | mem_dontcare_masks[i]) == (data | dontcare_mask)) begin
-                found_address = i;
-                hit = 1;
-            end
+            result[i] <= ((mem[i] | mem_dontcare_masks[i]) == (data | mem_dontcare_masks[i]));
         end
     end
 
