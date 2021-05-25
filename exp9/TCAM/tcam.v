@@ -1,6 +1,6 @@
 module tcam (
-    output reg [3:0] found_address,
-    output reg hit,
+    output wire [3:0] found_address,
+    output wire hit,
     input [15:0] data,
     input write_readN,
     input [15:0] dontcare_mask,
@@ -12,7 +12,7 @@ module tcam (
     reg [15:0] mem_dontcare_masks [0:15];
     reg result [15:0];
 
-    16_4_pr_encoder encoder (result, found_address, hit);
+    pr_encoder_16_to_4 encoder (result, found_address, hit);
 
     integer i;
     always @(posedge clk) begin
@@ -24,8 +24,8 @@ module tcam (
     always @(posedge clk or negedge resetN) begin
         if (~resetN) begin
             for (i = 0; i < 16; i = i + 1) begin
-                mem[i] <= 0;
-                mem_dontcare_masks[i] <= 0;
+                mem[i] <= 16'b0;
+                mem_dontcare_masks[i] <= 16'b0;
             end
         end
         else begin

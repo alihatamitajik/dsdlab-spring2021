@@ -1,4 +1,4 @@
-module 4_to_2_pr_encoder (
+module pr_encoder_4_to_2 (
     D,      /* input bits/signals */
     Y,      /* Encoded Signal */
     valid   /* if is valid (there is at least one 1 bit) */
@@ -13,10 +13,10 @@ module 4_to_2_pr_encoder (
 endmodule
 
 
-module 16_4_pr_encoder (
+module pr_encoder_16_to_4 (
     D,
     Y,
-    valid;
+    valid
 );
     input wire D [15:0];
     output wire [3:0] Y;
@@ -25,12 +25,12 @@ module 16_4_pr_encoder (
     wire valids [5:0];
     wire [1:0] results [3:0];
 
-    4_to_2_pr_encoder encoder1 (D[3:0], results[0], valids[0]);
-    4_to_2_pr_encoder encoder2 (D[4:7], results[1], valids[1]);
-    4_to_2_pr_encoder encoder3 (D[8:11],results[2], valids[2]);
-    4_to_2_pr_encoder encoder4 (D[12:15],results[3],valids[3]);
-    4_to_2_pr_encoder encoder5 ({results[1],results[0]},Y[1:0],);
-    4_to_2_pr_encoder encoder6 ({results[3],results[2]},Y[3:2],);
+    pr_encoder_4_to_2 encoder1 (D[3:0], results[0], valids[0]);
+    pr_encoder_4_to_2 encoder2 (D[7:4], results[1], valids[1]);
+    pr_encoder_4_to_2 encoder3 (D[11:8],results[2], valids[2]);
+    pr_encoder_4_to_2 encoder4 (D[15:12],results[3],valids[3]);
+    pr_encoder_4_to_2 encoder5 ({results[1],results[0]},Y[1:0],);
+    pr_encoder_4_to_2 encoder6 ({results[3],results[2]},Y[3:2],);
 
     assign valid = valids [0] || valids [1] || valids [2] ||valids [3];
     
