@@ -24,7 +24,7 @@ localparam FETCH1 =     4'd12;
 localparam FETCH2 =     4'd13;
 localparam PUSHC =      4'd0; // also pushc   opcode
 localparam PUSHM_READ = 4'd1; // also push    opcode
-localparam POP_POP =    4'd2; // also pop     opcode
+localparam POP =        4'd2; // also pop     opcode
 localparam JUMP =       4'd3; // also jump    opcode
 localparam JZ =         4'd4; // also jz      opcode
 localparam JS =         4'd5; // also js      opcode
@@ -76,7 +76,7 @@ always @(posedge clk) begin
             // based on the opcode
                 
                 // make pop signal ready
-                if (opcode == POP_POP ||
+                if (opcode == POP ||
                     opcode == JUMP ||
                     (opcode == JZ && z_flag) ||
                     (opcode == JS && s_flag)) stack_pop <= 1'b1;
@@ -104,11 +104,11 @@ always @(posedge clk) begin
                         current_state <= PUSHM_READ;
                     end
 
-                    POP_POP: begin
+                    POP: begin
                         // prepare to get the data
                         oprand <= ram_data_in;
                         stack_pop <= 1'b1;
-                        current_state <= POP_POP;
+                        current_state <= POP;
 
                         // prepare to fetch next instruction
                         ram_address <= pc;
@@ -143,7 +143,7 @@ always @(posedge clk) begin
                 ram_address <= pc;
             end
 
-            POP_POP: begin  // pop signal is 1 from last state, so the data will be stored in the ram_data_out
+            POP: begin  // pop signal is 1 from last state, so the data will be stored in the ram_data_out
             // pop signal become 0 and next opcode should be fetched
                 stack_pop <= 1'b0;
                 // prepare data to be stored
