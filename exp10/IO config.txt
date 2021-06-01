@@ -1,4 +1,4 @@
-F8  LLLLOOOO
+F8  VLLLOOOO
 F9  DDDDDDDD
 FA  DDDDDDDD
 FB  SSSSSSSS
@@ -7,6 +7,8 @@ FD  SSSSSSSS
 FE
 FF
 
-LLLL    Operation
-0000    M[M[F9]] <- M[FA]
-0001    IM[M[F9]] <- OOOO:M[FA]
+V -> is input valid?
+
+LLL     Operation
+000     M[M[F9]] <- M[FA]
+001     IM[M[F9]] <- OOOO:M[FA]
