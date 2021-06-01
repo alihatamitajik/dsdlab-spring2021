@@ -22,22 +22,28 @@ output reg ram_readWriteN, stack_push, stack_pop;
 localparam INITS =      4'd14;
 localparam FETCH1 =     4'd12;
 localparam FETCH2 =     4'd13;
-localparam PUSHC =      4'd0; // also pushc   opcode
-localparam PUSHM_READ = 4'd1; // also push    opcode
-localparam POP =        4'd2; // also pop     opcode
-localparam JUMP =       4'd3; // also jump    opcode
-localparam JZ =         4'd4; // also jz      opcode
-localparam JS =         4'd5; // also js      opcode
-localparam ADD_FIRST =  4'd6; // also add     opcode
+localparam PUSHC =      4'd0; // pushc opcode
+localparam PUSHM_READ = 4'd1; // push  opcode
+localparam POP =        4'd2; // pop   opcode
+localparam JUMP =       4'd3; // jump  opcode
+localparam JZ =         4'd4; // z     opcode
+localparam JS =         4'd5; // js    opcode
+localparam ADD_FIRST =  4'd6; // add   opcode
 localparam ADD_SECOND = 4'd10;           
-localparam SUB_FIRST =  4'd7; // also sub     opcode
-localparam SUB_SECOND = 4'd11;
+localparam SUB =        4'd7; // sub   opcode
 
 reg [3:0] current_state = 4'd14;
 reg [3:0] opcode;
 reg [7:0] oprand;
 
+reg [7:0] first;
+reg addSubN;
+wire [7:0] result;
+
 reg z_flag, s_flag;
+wire z,s;
+
+alu alu_instance(first, stack_data_in, addSubN, result, z, s);
 
 reg [7:0] pc;  // PROGRAM COUNTER
 
@@ -137,7 +143,17 @@ always @(posedge clk) begin
                         end
                     end
 
-                    
+                    ADD_FIRST: begin
+                        stack_pop <= 1'b1;
+                        addSubN <= 1;
+                        current_state <= ADD_FIRST;
+                    end
+
+                    SUB: begin
+                        stack_pop <= 1'b1;
+                        addSubN <= 0;
+                        current_state <= ADD_FIRST;
+                    end
                 end
             end
 
@@ -196,25 +212,40 @@ always @(posedge clk) begin
                 current_state <= FETCH1;
             end
 
+
+            // Same procedures goes for the addition and subtraction! so we just change the addSubN
+            // in fetch2 and use same states for the addition and subtraction
             ADD_FIRST: begin // first data that is poped will be caught here
-                
+                first <= stack_data_in;
+
+                // prepare to fetch next instruction
+                ram_address <= pc;
+                current_state <= ADD_SECOND;
             end
 
-            ADD_SECOND: begin // second data that is poped will be caught here and the sum is on write data
-            // of stack, push siganl become 1 and pop become 0, the opcode is fetched here, push signal goes
-            // on here and goes off in FETCH2.
+            ADD_SECOND: begin // second number is poped and is on stack data in. this wire goes
+            // to ALU directly to prepare the result faster
+                stack_data_out <= result;
+                stack_pop <= 1'b0;
+                // push this result to the stack in next clock
+                stack_push <= 1'b1;
                 
+                // update flags
+                z_flag <= z;
+                s_flag <= s;
+
+                // catch the next instruction
+                // fetch1 procedures
+                opcode <= ram_data_in[3:0];
+                if (ram_data_in < 4 ) begin // if opcode is pushc/push/pop and need operand
+                    address <= pc + 1;
+                    pc <= pc + 2;
+                end else begin
+                    pc <= pc + 1;
+                end
+                current_state <= FETCH2;
             end
 
-            SUB_FIRST: begin // first data that is poped will be caught here
-                
-            end
-
-            SUB_SECOND: begin // second data that is poped will be caught here and the sum is on write data
-            // of stack, push siganl become 1 and pop become 0, the opcode is fetched here, push signal goes
-            // on here and goes off in FETCH2.
-                
-            end
         endcase
     end
 end
