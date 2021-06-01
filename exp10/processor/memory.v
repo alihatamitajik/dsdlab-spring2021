@@ -1,0 +1,83 @@
+// Tri state buffer
+module tristate(
+    a,
+    c,
+    b
+    );
+    
+    input a,c;
+    output reg b;
+    
+    always @ (a or c) begin
+        if (c) begin
+            b <= a;
+        end else begin
+            b <= 'bz;
+        end
+    end
+endmodule
+
+// a structure to handle inout memory
+module ino(
+    a_in, a_out,c,
+    b
+    );
+    
+    inout b;
+    input a_in, c;
+    output a_out;
+    
+    tristate tristate_in  (a_in,c,b);
+    tristate tristate_out (b,~c,a_out);
+    
+endmodule
+
+// 8bit version of privous module
+// Helper module to separate read/write data pathes
+module ino8bit(
+    a_in,
+    a_out,
+    c,
+    b
+);
+
+    input  [15:0] a_in;
+    output [15:0] a_out;
+    input c;
+    inout  [15:0] b;
+    
+    ino ino0(a_in[0],a_out[0],c,b[0]);
+    ino ino1(a_in[1],a_out[1],c,b[1]);
+    ino ino2(a_in[2],a_out[2],c,b[2]);
+    ino ino3(a_in[3],a_out[3],c,b[3]);
+    ino ino4(a_in[4],a_out[4],c,b[4]);
+    ino ino5(a_in[5],a_out[5],c,b[5]);
+    ino ino6(a_in[6],a_out[6],c,b[6]);
+    ino ino7(a_in[7],a_out[7],c,b[7]);
+endmodule
+
+// ram with inout data port - only read or write at a time
+module ram (
+    address,
+    data,
+    rwn
+    );
+
+    input [7:0] address;
+    inout [7:0] data;
+    input rwn;
+    
+    reg [7:0] memory [255:0];
+    reg [7:0] data_out;
+    wire [7:0] data_in;
+    
+    ino8bit ino (data_out, data_in, rwn, data);
+    
+    always @ (negedge rwn or posedge rwn or address or data_in) begin
+        if (rwn) begin
+            data_out <= memory[address];
+        end else begin
+            memory [address] <= data_in;
+        end
+    end
+endmodule

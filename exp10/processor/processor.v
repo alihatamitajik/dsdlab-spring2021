@@ -19,7 +19,7 @@ module processor (
     reg [3:0] stack_pointer; // empty position at the top of stack
     signed reg [7:0] stack_mem [0:7];
     wire stack_full = (stack_pointer == 8);
-    wire stack_empty = (stack_pointer = 0);
+    wire stack_empty = (stack_pointer == 0);
     wire [7:0] top_of_stack = stack_empty ? 0 : stack_mem[stack_pointer - 1];
 
     // instruction memory
