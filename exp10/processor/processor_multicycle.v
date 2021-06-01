@@ -1,7 +1,23 @@
 module multicycle (
     clk,
-    haltN
+    haltN,
+    resetN,
+    ram_readWriteN,
+    ram_address,
+    ram_data_in,
+    ram_data_out,
+    stack_data_out,
+    stack_data_in,
+    stack_full,
+    stack_empty,
+    stack_push,
+    stack_pop,
 );
+
+input wire clk, haltN, resetN, stack_full, stack_empty;
+input wire [7:0] ram_data_in, stack_data_in;
+output reg [7:0] ram_address, ram_data_out, stack_data_out;
+output reg ram_readWriteN, stack_push, stack_pop;
 
 localparam FETCH1 =     4'd12;
 localparam FETCH2 =     4'd13;
@@ -18,10 +34,15 @@ localparam ADD_SECOND = 4'd10;
 localparam SUB_FIRST =  4'd7; // also sub     opcode
 localparam SUB_SECOND = 4'd11;
 
-reg current_state; // TODO
+reg [3:0] current_state = 4'd12;
+reg [3:0] opcode;
 
-always @(clk) begin
-    if (haltN) begin
+reg z_flag, s_flag;
+
+always @(posedge clk) begin
+    if (~resetN) begin
+        // TODO: RESET PROCEDURE
+    end else if (haltN) begin
         case (current_state)
             FETCH1: begin // opcode be fetched
                 
