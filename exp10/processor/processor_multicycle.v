@@ -114,6 +114,30 @@ always @(posedge clk) begin
                         ram_address <= pc;
                     end
 
+                    JUMP:
+                        current_state <= JUMP;
+                    
+                    JZ: begin
+                        if (z_flag) begin // if we have the flag 1 then we should pop the address and
+                            // store it in pc
+                            current_state <= JUMP;
+                        end else begin // else the next instruction must be fetched
+                            current_state <= FETCH1;
+                            address <= pc;
+                        end
+                    end
+                    
+                    JS: begin
+                        if (s_flag) begin // if we have the flag 1 then we should pop the address and
+                            // store it in pc
+                            current_state <= JUMP;
+                        end else begin // else the next instruction must be fetched
+                            current_state <= FETCH1;
+                            address <= pc;
+                        end
+                    end
+
+                    
                 end
             end
 
@@ -165,19 +189,11 @@ always @(posedge clk) begin
 
             JUMP begin // here pop flag is enabled from the last state, so the data will be popped to the
             // pc.  then we go to the FETCH1 state
-                
-            end
-            
-            JZ: begin // the pop signal is enabled from last state according to the flag,
-            // and we go to this state if flag was 1. so the PC will be updated and 
-            // we go back to the FETCH1
-                
-            end
-
-            JS: begin // the pop signal is enabled from last state according to the flag,
-            // and we go to this state if flag was 1. so the PC will be updated and 
-            // we go back to the FETCH1
-                
+            // we use this state for JZ and JS too, becuase the condition is checked in fetch2 state
+                stack_pop <= 1'b0;
+                pc <= stack_data_in;
+                address <= stack_data_in;
+                current_state <= FETCH1;
             end
 
             ADD_FIRST: begin // first data that is poped will be caught here
