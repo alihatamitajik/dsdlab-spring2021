@@ -49,8 +49,7 @@ reg [7:0] pc;  // PROGRAM COUNTER
 
 always @(posedge clk) begin
     if (~resetN) begin
-        // TODO: RESET PROCEDURE
-            // program counter set to zero
+        current_state <= INITS;
     end else if (haltN) begin
         case (current_state)
             INITS: begin // program counter will be set, read signal will be set
