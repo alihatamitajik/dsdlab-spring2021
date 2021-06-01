@@ -24,7 +24,6 @@ localparam FETCH1 =     4'd12;
 localparam FETCH2 =     4'd13;
 localparam PUSHC =      4'd0; // also pushc   opcode
 localparam PUSHM_READ = 4'd1; // also push    opcode
-localparam PUSHM_PUSH = 4'd8;           
 localparam POP_POP =    4'd2; // also pop     opcode
 localparam POP_WRITE =  4'd9;
 localparam JUMP =       4'd3; // also jump    opcode
@@ -37,7 +36,6 @@ localparam SUB_SECOND = 4'd11;
 
 reg [3:0] current_state = 4'd14;
 reg [3:0] opcode;
-reg [7:0] oprand;
 
 reg z_flag, s_flag;
 
@@ -76,11 +74,16 @@ always @(posedge clk) begin
             // no oprand is fetched because it  will decide where we go next
             // oprand will be fetched if opcode need it and the oprand will be loaded where it is nedded
             // based on the opcode
-                oprand <= ram_data_in;
-                stack_pop <= 1'b0;
+                
+                // make pop signal ready
+                if (opcode == POP_POP) stack_pop <= 1'b1;
+                else stack_pop <= 1'b0;
                 // make stack push signal ready. 
                 if (opcode == PUSHC) stack_push <= 1'b1;
                 else stack_push <= 1'b1;
+                
+                // reset ram mode to read
+                ram_readWriteN <= 1b'1;
 
                 case (opcode) begin
                     PUSHC: begin    // data to push prepared here
@@ -91,8 +94,13 @@ always @(posedge clk) begin
                         
                         // prepare to fetch next instruction
                         ram_address <= pc;
-                        ram_readWriteN <= 1b'1;
                     end
+
+                    PUSHM_READ: begin // prepare data to be read
+                        ram_address <= ram_data_in; // fetch oprand as address indirect
+                        current_state <= PUSHM_READ;
+                    end
+
                 end
             end
 
@@ -102,7 +110,6 @@ always @(posedge clk) begin
                 
                 // fetch1 procedures
                 opcode <= ram_data_in[3:0];
-                ram_readWriteN <= 1b'1;
                 if (ram_data_in < 4 ) begin // if opcode is pushc/push/pop
                     address <= pc + 1;
                     pc <= pc + 2;
@@ -114,12 +121,13 @@ always @(posedge clk) begin
 
             PUSHM_READ: begin   // read signal is one from last state - it will store the data
             // in stack in-data reg to be pushed next clock, push signal should become one here
-                
-            end
-
-            PUSHM_PUSH: begin   // push will be done by this state, so the push signal goes of in this state
-            // and the next opcode should be fetched
-                
+                // prepare read data to be pushed
+                stack_data_out <= ram_data_in;
+                stack_push <= 1'b1;
+                current_state <= PUSHC; // the works that would be done is completly the same
+                                        // as in the PUSHC state
+                // prepare for fetch instruction
+                ram_address <= pc;
             end
 
             POP_POP: begin  // pop signal is 1 from last state, so the data will be stored in the data_to_write
