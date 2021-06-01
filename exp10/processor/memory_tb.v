@@ -6,9 +6,10 @@ module ram_tb();
     reg rwn = 1;
     wire [7:0] data_read;
     wire [7:0] data;
+    wire enable = 1;
     
     ino8bit ino (data_to_write ,data_read,~ rwn, data);
-    ram ram1(address, data, rwn);
+    ram ram1(address, data, rwn, enable);
     
     initial begin
         #5 rwn = 0;

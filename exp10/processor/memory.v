@@ -60,12 +60,14 @@ endmodule
 module ram (
     address,
     data,
-    rwn
-    );
+    rwn,
+    enable
+);
 
     input [7:0] address;
     inout [7:0] data;
     input rwn;
+    input enable;
     
     reg [7:0] memory [255:0];
     reg [7:0] data_out;
@@ -74,10 +76,36 @@ module ram (
     ino8bit ino (data_out, data_in, rwn, data);
     
     always @ (negedge rwn or posedge rwn or address or data_in) begin
-        if (rwn) begin
-            data_out <= memory[address];
+        if (enable)
+            if (rwn) begin
+                data_out <= memory[address];
+            end else begin
+                memory [address] <= data_in;
+            end
+    end
+endmodule
+
+module memory (
+    clk,
+    readwriteN,
+    address,
+    data_in,
+    data_out
+);
+    input wire [7:0] address;
+    input wire clk;
+    input wire [7:0] data_in;
+    input wire readwriteN;
+    output reg [7:0] data_out;
+
+    reg signed [7:0] ram [255:0];
+
+    always @(negedge clk) begin
+        if (~readwriteN) begin
+            ram [address] <= data_in;
         end else begin
-            memory [address] <= data_in;
+            data_out <= ram [address];
         end
     end
+    
 endmodule
