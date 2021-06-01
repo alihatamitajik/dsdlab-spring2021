@@ -90,22 +90,53 @@ module memory (
     readwriteN,
     address,
     data_in,
-    data_out
+    data_out,
+    indata1,
+    indata2,
+    indata3,
+    indata4,
+    indata5,
+    indata6,
+    indata7,
+    outdataio
 );
     input wire [7:0] address;
     input wire clk;
     input wire [7:0] data_in;
     input wire readwriteN;
     output reg [7:0] data_out;
+    input wire [7:0] indata1,
+    indata2,
+    indata3,
+    indata4,
+    indata5,
+    indata6,
+    indata7;
+
+    output wire [7:0] outdataio;
 
     reg signed [7:0] ram [255:0];
 
+    // F8 OUT DATA IS MEMORY MAPPED OUTPUT
+    assign outdataio = ram[8'hF8];
+
     always @(negedge clk) begin
-        if (~readwriteN) begin
+        if (~readwriteN && (address < 8'hF9)) begin
             ram [address] <= data_in;
         end else begin
             data_out <= ram [address];
         end
+    end
+
+    // Memory mapped inputs
+    always @(*) begin
+        ram[8'hF9] = indata1;
+        ram[8'hFA] = indata2;
+        ram[8'hFB] = indata3;
+        ram[8'hFC] = indata4;
+        ram[8'hFD] = indata5;
+        ram[8'hFE] = indata6;
+        ram[8'hFF] = indata7;
     end
     
 endmodule
