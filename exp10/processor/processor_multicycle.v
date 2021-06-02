@@ -64,19 +64,19 @@ always @(posedge clk) begin
         case (current_state)
             INITS: begin // program counter will be set, read signal will be set
                 pc <= 16'b0;
-                ram_readWriteN <= 1b'1;
+                ram_readWriteN <= 1'b1;
                 stack_pop <= 1'b0;
                 stack_push <= 1'b0;   
                 ram_address <=  1'b0;
-                ram_readWriteN <= 1b'1;
+                ram_readWriteN <= 1'b1;
                 current_state <= FETCH1; 
             end
             
             FETCH1: begin // opcode be fetched, the address must be updated in the last state/clock
                 opcode <= ram_data_in[3:0];
-                ram_readWriteN <= 1b'1;
+                ram_readWriteN <= 1'b1;
                 if (ram_data_in < 4 ) begin // if opcode is pushc/push/pop
-                    address <= pc + 1;
+                    ram_address <= pc + 1;
                     pc <= pc + 2;
                 end else begin
                     pc <= pc + 1;
@@ -101,9 +101,9 @@ always @(posedge clk) begin
                 else stack_push <= 1'b1;
                 
                 // reset ram mode to read
-                ram_readWriteN <= 1b'1;
+                ram_readWriteN <= 1'b1;
 
-                case (opcode) begin
+                case (opcode)
                     PUSHC: begin    // data to push prepared here
                         // prepare data to be pushed
                         stack_push <= 1'b1;
@@ -147,7 +147,7 @@ always @(posedge clk) begin
                             current_state <= JUMP;
                         end else begin // else the next instruction must be fetched
                             current_state <= FETCH1;
-                            address <= pc;
+                            ram_address <= pc;
                         end
                     end
                     
@@ -157,7 +157,7 @@ always @(posedge clk) begin
                             current_state <= JUMP;
                         end else begin // else the next instruction must be fetched
                             current_state <= FETCH1;
-                            address <= pc;
+                            ram_address <= pc;
                         end
                     end
 
@@ -176,7 +176,7 @@ always @(posedge clk) begin
                     HALTED: begin
                         finish_flag <= 1;
                     end
-                end
+                endcase
             end
 
             PUSHC: begin // the push signal is one from last state
@@ -186,7 +186,7 @@ always @(posedge clk) begin
                 // fetch1 procedures
                 opcode <= ram_data_in[3:0];
                 if (ram_data_in < 4 ) begin // if opcode is pushc/push/pop
-                    address <= pc + 1;
+                    ram_address <= pc + 1;
                     pc <= pc + 2;
                 end else begin
                     pc <= pc + 1;
@@ -211,13 +211,13 @@ always @(posedge clk) begin
                 // prepare data to be stored
                 ram_data_out <= stack_data_in;
                 ram_readWriteN <= 1'b0;
-                address <= oprand;
+                ram_address <= oprand;
 
                 // catch the next instruction
                 // fetch1 procedures
                 opcode <= ram_data_in[3:0];
                 if (ram_data_in < 4 ) begin // if opcode is pushc/push/pop and need operand
-                    address <= pc + 1;
+                    ram_address <= pc + 1;
                     pc <= pc + 2;
                 end else begin
                     pc <= pc + 1;
@@ -225,12 +225,12 @@ always @(posedge clk) begin
                 current_state <= FETCH2;
             end
 
-            JUMP begin // here pop flag is enabled from the last state, so the data will be popped to the
+            JUMP: begin // here pop flag is enabled from the last state, so the data will be popped to the
             // pc.  then we go to the FETCH1 state
             // we use this state for JZ and JS too, becuase the condition is checked in fetch2 state
                 stack_pop <= 1'b0;
                 pc <= stack_data_in;
-                address <= stack_data_in;
+                ram_address <= stack_data_in;
                 current_state <= FETCH1;
             end
 
@@ -261,7 +261,7 @@ always @(posedge clk) begin
                 // fetch1 procedures
                 opcode <= ram_data_in[3:0];
                 if (ram_data_in < 4 ) begin // if opcode is pushc/push/pop and need operand
-                    address <= pc + 1;
+                    ram_address <= pc + 1;
                     pc <= pc + 2;
                 end else begin
                     pc <= pc + 1;

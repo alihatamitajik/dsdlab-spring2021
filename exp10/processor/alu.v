@@ -11,13 +11,14 @@ module alu (
 input signed [7:0] first, second;
 input addSubN;
 output signed [7:0] result;
+output z,s,v;
 wire signed [8:0] first_extended, second_extended, result_extended;
 
 assign first_extended = {first[7], first};
 assign second_extended = {second[7], second};
 
-assign result_extended = addSubN? first_extended + second_extended:
-                                : first_extended - second_extended:
+assign result_extended = addSubN? first_extended + second_extended
+                                : first_extended - second_extended;
 
 
 
