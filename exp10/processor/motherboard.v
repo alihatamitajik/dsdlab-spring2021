@@ -69,10 +69,10 @@ module multiCycle (
         resetN,
         ram_readWriteN,
         ram_address,
-        ram_data_in,
         ram_data_out,
-        stack_data_out,
+        ram_data_in,        
         stack_data_in,
+        stack_data_out, 
         stack_full,
         stack_empty,
         stack_push,
@@ -93,7 +93,8 @@ module multiCycle (
 
     assign error =  overflow ||     // If overflowed over procedures
                     stack_error ||  // If stack error occured (Pop from empty stack or push into full stack)
-                    inputs_sign;    // If inputs were negative
+                    inputs_sign ||
+                    (outmapped > 127);    // If inputs were negative
     // 7-segment
     seven_seg_encoder encoder(
         outmapped,

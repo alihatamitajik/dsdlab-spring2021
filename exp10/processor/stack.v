@@ -18,7 +18,7 @@ module stack #(
     assign full = (stack_pointer == 8);
     assign empty = (stack_pointer == 0);
 
-    always @(posedge clk or negedge resetN) begin
+    always @(negedge clk or negedge resetN) begin
         if (~resetN) begin
             stack_pointer <= 0;
             out <= 0;

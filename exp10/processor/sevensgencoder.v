@@ -19,7 +19,7 @@ module seven_seg_encoder (
 
     // encodong binary to BCD
     integer i;
-    always @(abs_number) begin
+    always @(number) begin
         sign = (number < 0)? 4'd15 : 4'd14;
         hun = 4'd0;
         ten = 4'd0;
@@ -39,10 +39,10 @@ module seven_seg_encoder (
             hun[0] = ten[3];
 
             ten = ten <<1 ;
-            ten[0] = ten[0];
+            ten[0] = one[3];
 
             one = one << 1;
-            one[0] = abs_number[i];
+            one[0] = number[i];
 
         end 
     end

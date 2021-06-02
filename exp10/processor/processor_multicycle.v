@@ -21,7 +21,7 @@ input wire clk, haltN, resetN, stack_full, stack_empty;
 input wire [7:0] ram_data_in, stack_data_in;
 output reg [7:0] ram_address, ram_data_out, stack_data_out;
 output reg ram_readWriteN, stack_push, stack_pop;
-output reg overflow, stack_error, finish_flag;
+output reg overflow = 0, stack_error = 0, finish_flag = 0;
 
 // States
 localparam HALTED =     4'd15;// FINISH   
@@ -37,6 +37,7 @@ localparam JS =         4'd5; // js    opcode
 localparam ADD_FIRST =  4'd6; // add   opcode
 localparam ADD_SECOND = 4'd10;           
 localparam SUB =        4'd7; // sub   opcode
+localparam POP_WRITE =  4'd8;
 
 // Local used registers
 reg [3:0] current_state = 4'd14;
@@ -60,7 +61,7 @@ reg z_flag, s_flag;
 always @(posedge clk) begin
     if (~resetN) begin
         current_state <= INITS;
-    end else if (haltN) begin   // When the processor is halted we are changing inputs and so
+    end else if (haltN || finish_flag) begin   // When the processor is halted we are changing inputs and so
         case (current_state)
             INITS: begin // program counter will be set, read signal will be set
                 pc <= 16'b0;
@@ -94,11 +95,13 @@ always @(posedge clk) begin
                 if (opcode == POP ||
                     opcode == JUMP ||
                     (opcode == JZ && z_flag) ||
-                    (opcode == JS && s_flag)) stack_pop <= 1'b1;
+                    (opcode == JS && s_flag) ||
+                    opcode == ADD_FIRST ||
+                    opcode == SUB) stack_pop <= 1'b1;
                 else stack_pop <= 1'b0;
                 // make stack push signal ready. 
                 if (opcode == PUSHC) stack_push <= 1'b1;
-                else stack_push <= 1'b1;
+                else stack_push <= 1'b0;
                 
                 // reset ram mode to read
                 ram_readWriteN <= 1'b1;
@@ -162,13 +165,11 @@ always @(posedge clk) begin
                     end
 
                     ADD_FIRST: begin
-                        stack_pop <= 1'b1;
                         addSubN <= 1;
                         current_state <= ADD_FIRST;
                     end
 
                     SUB: begin
-                        stack_pop <= 1'b1;
                         addSubN <= 0;
                         current_state <= ADD_FIRST;
                     end
@@ -216,7 +217,12 @@ always @(posedge clk) begin
                 // catch the next instruction
                 // fetch1 procedures
                 opcode <= ram_data_in[3:0];
-                if (ram_data_in < 4 ) begin // if opcode is pushc/push/pop and need operand
+                current_state <= POP_WRITE;
+            end
+            
+            POP_WRITE: begin
+                ram_readWriteN <= 1'b1;
+                if (opcode < 4 ) begin // if opcode is pushc/push/pop and need operand
                     ram_address <= pc + 1;
                     pc <= pc + 2;
                 end else begin
