@@ -12,15 +12,17 @@ module multicycle_processor (
     stack_empty,
     stack_push,
     stack_pop,
-    overflow
+    overflow,
+    stack_error
 );
-
+// ports
 input wire clk, haltN, resetN, stack_full, stack_empty;
 input wire [7:0] ram_data_in, stack_data_in;
 output reg [7:0] ram_address, ram_data_out, stack_data_out;
 output reg ram_readWriteN, stack_push, stack_pop;
-output reg overflow;
+output reg overflow, stack_error;
 
+// States
 localparam INITS =      4'd14;
 localparam FETCH1 =     4'd12;
 localparam FETCH2 =     4'd13;
@@ -34,20 +36,24 @@ localparam ADD_FIRST =  4'd6; // add   opcode
 localparam ADD_SECOND = 4'd10;           
 localparam SUB =        4'd7; // sub   opcode
 
+// Local used registers
 reg [3:0] current_state = 4'd14;
 reg [3:0] opcode;
 reg [7:0] oprand;
 
+// PROGRAM COUNTER
+reg [7:0] pc;
+
+// ALU
 reg [7:0] first;
 reg addSubN;
 wire [7:0] result;
-
-reg z_flag, s_flag;
 wire z,s,v;
 
 alu alu_instance(first, stack_data_in, addSubN, result, z, s);
 
-reg [7:0] pc;  // PROGRAM COUNTER
+// Flags
+reg z_flag, s_flag;
 
 always @(posedge clk) begin
     if (~resetN) begin
@@ -101,6 +107,9 @@ always @(posedge clk) begin
                         stack_push <= 1'b1;
                         stack_data_out <= ram_data_in;
                         current_state = PUSHC;
+
+                        // if the stack is full the overflow flag turn 1
+                        if (stack_full) stack_error <= 1'b1; 
                         
                         // prepare to fetch next instruction
                         ram_address <= pc;
@@ -109,6 +118,9 @@ always @(posedge clk) begin
                     PUSHM_READ: begin // prepare data to be read
                         ram_address <= ram_data_in; // fetch oprand as address indirect
                         current_state <= PUSHM_READ;
+
+                        // if the stack is full the overflow flag turn 1
+                        if (stack_full) stack_error <= 1'b1; 
                     end
 
                     POP: begin
@@ -119,6 +131,9 @@ always @(posedge clk) begin
 
                         // prepare to fetch next instruction
                         ram_address <= pc;
+
+                        // if the stack is empty the overflow flag turn 1
+                        if (stack_empty) stack_error <= 1'b1; 
                     end
 
                     JUMP:
