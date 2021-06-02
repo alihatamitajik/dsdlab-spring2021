@@ -13,16 +13,18 @@ module multicycle_processor (
     stack_push,
     stack_pop,
     overflow,
-    stack_error
+    stack_error,
+    finish_flag
 );
 // ports
 input wire clk, haltN, resetN, stack_full, stack_empty;
 input wire [7:0] ram_data_in, stack_data_in;
 output reg [7:0] ram_address, ram_data_out, stack_data_out;
 output reg ram_readWriteN, stack_push, stack_pop;
-output reg overflow, stack_error;
+output reg overflow, stack_error, finish_flag;
 
 // States
+localparam HALTED =     4'd15;// FINISH   
 localparam INITS =      4'd14;
 localparam FETCH1 =     4'd12;
 localparam FETCH2 =     4'd13;
@@ -58,7 +60,7 @@ reg z_flag, s_flag;
 always @(posedge clk) begin
     if (~resetN) begin
         current_state <= INITS;
-    end else if (haltN) begin
+    end else if (haltN) begin   // When the processor is halted we are changing inputs and so
         case (current_state)
             INITS: begin // program counter will be set, read signal will be set
                 pc <= 16'b0;
@@ -169,6 +171,10 @@ always @(posedge clk) begin
                         stack_pop <= 1'b1;
                         addSubN <= 0;
                         current_state <= ADD_FIRST;
+                    end
+
+                    HALTED: begin
+                        finish_flag <= 1;
                     end
                 end
             end

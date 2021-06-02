@@ -13,7 +13,8 @@ module multiCycle (
     seven_seg_sign,
     seven_seg_digit_1,
     seven_seg_digit_2,
-    seven_seg_digit_3
+    seven_seg_digit_3,
+    finish_flag
 );
     // PORTS
     // I/O Mapped Inputs
@@ -27,10 +28,11 @@ module multiCycle (
     resetN, haltN;
 
     // Error flag (If overflowed or inputs were negative)
-    output error;
+    output error, finish_flag;
 
     // Seven Segment LEDs digits and sign
     // We assumed that negative sign will be shown by input 15 (4'b1111)
+    // and 14 for off
     output [3:0] seven_seg_sign,
     seven_seg_digit_1,
     seven_seg_digit_2,
@@ -57,7 +59,7 @@ module multiCycle (
         ram_address,ram_data_in,ram_data_out,
         indata1,indata2,indata3,indata4,
         indata5,indata6,indata7,
-        outmapped);
+        outmapped, resetN);
     
     // PROCESSOR
     wire overflow, stack_error;
@@ -76,7 +78,8 @@ module multiCycle (
         stack_push,
         stack_pop,
         overflow,
-        stack_error);
+        stack_error,
+        finish_flag);
     
     // ERROR
     wire inputs_sign;
@@ -92,5 +95,10 @@ module multiCycle (
                     stack_error ||  // If stack error occured (Pop from empty stack or push into full stack)
                     inputs_sign;    // If inputs were negative
     // 7-segment
-
+    module seven_seg_encoder (
+        outmapped,
+        seven_seg_sign,
+        seven_seg_digit_3,
+        seven_seg_digit_2,
+        seven_seg_digit_1);
 endmodule
