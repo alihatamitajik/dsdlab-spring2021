@@ -1,4 +1,10 @@
-pushc 217
-pop 10
-push 10
-jump
+push 255
+pushc 23
+add
+pop 255
+push 255
+push 255
+add
+pushc 12
+sub
+pop 255

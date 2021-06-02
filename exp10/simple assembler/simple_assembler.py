@@ -41,6 +41,8 @@ bin_code_file = args[2]
 f = open(code_file, "r")
 program = f.readlines()
 f.close()
+for i in range(len(program)):
+    program[i] = program[i].replace('\n', '')
 
 bin_program = program_to_bin(program)
 f = open(bin_code_file, "w")
