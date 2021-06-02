@@ -1,5 +1,5 @@
 module stack #(
-    parameter width = 8, depth = 8, address_width = $clog2(depth);
+    parameter width = 8, depth = 8, address_width = $clog2(depth)
 ) (
     output [width - 1:0] data_out,
     output full,
@@ -16,7 +16,7 @@ module stack #(
 
     assign data_out = out;
     assign full = (stack_pointer == 8);
-    assign empty = (stack_pointer = 0);
+    assign empty = (stack_pointer == 0);
 
     always @(posedge clk or negedge resetN) begin
         if (~resetN) begin

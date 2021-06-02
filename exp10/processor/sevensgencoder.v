@@ -1,6 +1,6 @@
 // Source : https://my.eng.utah.edu/~nmcdonal/Tutorials/BCDTutorial/BCDConversion.html
 module seven_seg_encoder (
-    number.
+    number,
     sign,
     hun,
     ten,
@@ -15,14 +15,12 @@ module seven_seg_encoder (
     wire [6:0] abs_number;
 
     // Get the abslout value to decode
-    assign abs_number = (number < 0) ~number + 1 : number;
-    
-    // sign 7-seg part
-    assign sign = (number < 0)? 4'd15 : 4'd14;
+    assign abs_number = (number < 0)? ~number + 1 : number;
 
     // encodong binary to BCD
     integer i;
     always @(abs_number) begin
+        sign = (number < 0)? 4'd15 : 4'd14;
         hun = 4'd0;
         ten = 4'd0;
         one = 4'd0;
@@ -38,7 +36,7 @@ module seven_seg_encoder (
             
             // shifts
             hun = hun << 1;
-            hun[0] = tens [3];
+            hun[0] = ten[3];
 
             ten = ten <<1 ;
             ten[0] = ten[0];

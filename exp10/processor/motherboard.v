@@ -50,12 +50,12 @@ module multiCycle (
 
     // RAM
     wire [7:0] outmapped;
-    wire ram_readwriteN;
+    wire ram_readWriteN;
     wire [7:0] ram_address;
     wire [7:0] ram_data_in;
     wire [7:0] ram_data_out;
     memory memory1(
-        clk,ram_readwriteN,
+        clk,ram_readWriteN,
         ram_address,ram_data_in,ram_data_out,
         indata1,indata2,indata3,indata4,
         indata5,indata6,indata7,
@@ -95,7 +95,7 @@ module multiCycle (
                     stack_error ||  // If stack error occured (Pop from empty stack or push into full stack)
                     inputs_sign;    // If inputs were negative
     // 7-segment
-    module seven_seg_encoder (
+    seven_seg_encoder encoder(
         outmapped,
         seven_seg_sign,
         seven_seg_digit_3,
