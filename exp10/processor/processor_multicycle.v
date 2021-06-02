@@ -1,4 +1,4 @@
-module multicycle (
+module multicycle_processor (
     clk,
     haltN,
     resetN,
@@ -12,12 +12,14 @@ module multicycle (
     stack_empty,
     stack_push,
     stack_pop,
+    overflow
 );
 
 input wire clk, haltN, resetN, stack_full, stack_empty;
 input wire [7:0] ram_data_in, stack_data_in;
 output reg [7:0] ram_address, ram_data_out, stack_data_out;
 output reg ram_readWriteN, stack_push, stack_pop;
+output reg overflow;
 
 localparam INITS =      4'd14;
 localparam FETCH1 =     4'd12;
@@ -41,7 +43,7 @@ reg addSubN;
 wire [7:0] result;
 
 reg z_flag, s_flag;
-wire z,s;
+wire z,s,v;
 
 alu alu_instance(first, stack_data_in, addSubN, result, z, s);
 
@@ -232,6 +234,7 @@ always @(posedge clk) begin
                 // update flags
                 z_flag <= z;
                 s_flag <= s;
+                if (v) overflow <= 1'b1;
 
                 // catch the next instruction
                 // fetch1 procedures
